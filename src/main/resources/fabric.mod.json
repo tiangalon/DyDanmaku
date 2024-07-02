@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "dydanmaku",
+  "version": "${version}",
+  "name": "DyDanmaku",
+  "description": "一个用于可在聊天框接受抖音直播间弹幕的模组",
+  "authors": [
+    "tiangalon"
+  ],
+  "contact": {
+    "website": "blog.tiangalon.top",
+    "repo": "https://github.com/tiangalon/DyDanmaku"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/dydanmaku/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "top.tiangalon.dydanmaku.client.DyDanmakuClient"
+    ],
+    "main": [
+      "top.tiangalon.dydanmaku.DyDanmaku"
+    ]
+  },
+  "mixins": [
+    "dydanmaku.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
