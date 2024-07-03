@@ -1,12 +1,21 @@
 package DyDanmaku;
 
+import com.mojang.brigadier.context.CommandContext;
+import net.minecraft.command.CommandSource;
+import net.minecraft.server.command.ServerCommandSource;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.WebSocket;
 
 public class WebSocketClient {
-    WSListener Listener = new WSListener();
+    private ServerCommandSource source;
     WebSocket ws;
+    WSListener Listener = null;
+
+    public WebSocketClient(ServerCommandSource source) {
+        this.source = source;
+        this.Listener = new WSListener(source);
+    }
 
     /**
      * websocket连接

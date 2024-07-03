@@ -1,0 +1,485 @@
+[23:24:38] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.15.11
+[23:24:39] [main/INFO] (FabricLoader) Loading 59 mods:
+	- dydanmaku 1.0-SNAPSHOT
+	- fabric-api 0.92.2+1.20.1
+	- fabric-api-base 0.4.31+1802ada577
+	- fabric-api-lookup-api-v1 1.6.36+1802ada577
+	- fabric-biome-api-v1 13.0.13+1802ada577
+	- fabric-block-api-v1 1.0.11+1802ada577
+	- fabric-block-view-api-v2 1.0.1+1802ada577
+	- fabric-blockrenderlayer-v1 1.1.41+1802ada577
+	- fabric-client-tags-api-v1 1.1.2+1802ada577
+	- fabric-command-api-v1 1.2.34+f71b366f77
+	- fabric-command-api-v2 2.2.13+1802ada577
+	- fabric-commands-v0 0.2.51+df3654b377
+	- fabric-containers-v0 0.1.64+df3654b377
+	- fabric-content-registries-v0 4.0.11+1802ada577
+	- fabric-convention-tags-v1 1.5.5+1802ada577
+	- fabric-crash-report-info-v1 0.2.19+1802ada577
+	- fabric-data-attachment-api-v1 1.0.0+de0fd6d177
+	- fabric-data-generation-api-v1 12.3.4+1802ada577
+	- fabric-dimensions-v1 2.1.54+1802ada577
+	- fabric-entity-events-v1 1.6.0+1c78457f77
+	- fabric-events-interaction-v0 0.6.2+1802ada577
+	- fabric-events-lifecycle-v0 0.2.63+df3654b377
+	- fabric-game-rule-api-v1 1.0.40+1802ada577
+	- fabric-gametest-api-v1 1.2.13+1802ada577
+	- fabric-item-api-v1 2.1.28+1802ada577
+	- fabric-item-group-api-v1 4.0.12+1802ada577
+	- fabric-key-binding-api-v1 1.0.37+1802ada577
+	- fabric-keybindings-v0 0.2.35+df3654b377
+	- fabric-lifecycle-events-v1 2.2.22+1802ada577
+	- fabric-loot-api-v2 1.2.1+1802ada577
+	- fabric-loot-tables-v1 1.1.45+9e7660c677
+	- fabric-message-api-v1 5.1.9+1802ada577
+	- fabric-mining-level-api-v1 2.1.50+1802ada577
+	- fabric-model-loading-api-v1 1.0.3+1802ada577
+	- fabric-models-v0 0.4.2+9386d8a777
+	- fabric-networking-api-v1 1.3.11+1802ada577
+	- fabric-networking-v0 0.3.51+df3654b377
+	- fabric-object-builder-api-v1 11.1.3+1802ada577
+	- fabric-particles-v1 1.1.2+1802ada577
+	- fabric-recipe-api-v1 1.0.21+1802ada577
+	- fabric-registry-sync-v0 2.3.3+1802ada577
+	- fabric-renderer-api-v1 3.2.1+1802ada577
+	- fabric-renderer-indigo 1.5.2+85287f9f77
+	- fabric-renderer-registries-v1 3.2.46+df3654b377
+	- fabric-rendering-data-attachment-v1 0.3.37+92a0d36777
+	- fabric-rendering-fluids-v1 3.0.28+1802ada577
+	- fabric-rendering-v0 1.1.49+df3654b377
+	- fabric-rendering-v1 3.0.8+1802ada577
+	- fabric-resource-conditions-api-v1 2.3.8+1802ada577
+	- fabric-resource-loader-v0 0.11.10+1802ada577
+	- fabric-screen-api-v1 2.0.8+1802ada577
+	- fabric-screen-handler-api-v1 1.3.30+1802ada577
+	- fabric-sound-api-v1 1.0.13+1802ada577
+	- fabric-transfer-api-v1 3.3.5+8dd72ea377
+	- fabric-transitive-access-wideners-v1 4.3.1+1802ada577
+	- fabricloader 0.15.11
+	- java 19
+	- minecraft 1.20.1
+	- mixinextras 0.3.5
+[23:24:39] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/tao/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
+[23:24:39] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[23:24:39] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[23:24:39] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[23:24:40] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
+[23:24:43] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 100 milliseconds
+[23:24:45] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[23:24:46] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
+	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-4.0.43.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:156) ~[authlib-4.0.43.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.<init>(YggdrasilUserApiService.java:55) ~[authlib-4.0.43.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.createUserApiService(YggdrasilAuthenticationService.java:124) ~[authlib-4.0.43.jar:?]
+	at net.minecraft.client.MinecraftClient.createUserApiService(MinecraftClient.java:712) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.client.MinecraftClient.<init>(MinecraftClient.java:507) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:191) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:470) ~[fabric-loader-0.15.11.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.15.11.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.15.11.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
+Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 401
+	at com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:85) ~[authlib-4.0.43.jar:?]
+	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-4.0.43.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-4.0.43.jar:?]
+	... 9 more
+[23:24:46] [Render thread/INFO] (Minecraft) Setting user: Player97
+[23:24:46] [Render thread/INFO] (DyDanmaku) DyDanmaku initialized
+[23:24:46] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[23:24:46] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.2-snapshot
+[23:24:47] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-transitive-access-wideners-v1, fabric-crash-report-info-v1, fabric-entity-events-v1, fabric-particles-v1, fabric-item-api-v1, fabric-mining-level-api-v1, fabric-gametest-api-v1, fabric-rendering-v1, fabric-api-lookup-api-v1, fabric-events-lifecycle-v0, fabric-transfer-api-v1, fabric-api-base, fabric-convention-tags-v1, fabric-resource-conditions-api-v1, fabric-block-api-v1, fabric-api, fabric-resource-loader-v0, fabric-loot-tables-v1, fabric-data-attachment-api-v1, fabric-rendering-data-attachment-v1, fabric-model-loading-api-v1, fabric-rendering-v0, fabric-loot-api-v2, fabric-keybindings-v0, fabric-commands-v0, fabric-biome-api-v1, fabric-blockrenderlayer-v1, fabric-renderer-registries-v1, fabric-sound-api-v1, fabric-block-view-api-v2, fabric-key-binding-api-v1, fabric-recipe-api-v1, fabric-dimensions-v1, fabric-client-tags-api-v1, fabricloader, fabric-models-v0, fabric-message-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-rendering-fluids-v1, fabric-item-group-api-v1, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-networking-v0, fabric-renderer-indigo, fabric-command-api-v2, fabric-game-rule-api-v1, fabric-renderer-api-v1, fabric-lifecycle-events-v1, fabric-events-interaction-v0, fabric-data-generation-api-v1, fabric-command-api-v1, fabric-content-registries-v0, fabric-containers-v0, fabric-registry-sync-v0)
+[23:24:47] [Worker-Main-11/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
+[23:24:48] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
+[23:24:48] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[23:24:48] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[23:24:48] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
+[23:24:48] [Render thread/INFO] (Minecraft) Sound engine started
+[23:24:48] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[23:24:48] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[23:24:48] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[23:24:48] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[23:24:48] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[23:24:48] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[23:24:48] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[23:24:48] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[23:24:48] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[23:24:49] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[23:24:49] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[23:24:49] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[23:24:49] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[23:25:01] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[23:25:01] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
+[23:25:01] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 1.232 ms
+[23:25:01] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
+[23:25:01] [Server thread/INFO] (Minecraft) Generating keypair
+[23:25:02] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[23:25:04] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[23:25:04] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[23:25:04] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[23:25:04] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[23:25:04] [Render thread/INFO] (Minecraft) Preparing spawn area: 93%
+[23:25:04] [Render thread/INFO] (Minecraft) Time elapsed: 2106 ms
+[23:25:04] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[23:25:04] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[23:25:05] [Server thread/INFO] (Minecraft) Player97[local:E:9a938938] logged in with entity id 148 at (-84.38510291018876, 64.0, -352.71104721711134)
+[23:25:05] [Server thread/INFO] (Minecraft) Player97 joined the game
+[23:25:06] [Render thread/INFO] (Minecraft) Loaded 2 advancements
+[23:25:20] [Render thread/INFO] (Minecraft) [System] [CHAT] 已经连接到房间号：141777563975
+[23:25:20] [Render thread/INFO] (Minecraft) [System] [CHAT] Called /dydanmaku connect with live_id 141777563975
+[23:25:20] [OkHttp https://webcast5-ws-web-lq.douyin.com/.../INFO] (DyDanmaku) connected to server
+[23:25:21] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：759,累计观看人数：3.4万
+[23:25:21] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】搏神明一笑：令宇白色染料你一般用啥合成呀，今天找了半天的铃兰花[流泪]
+[23:25:21] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了8个赞
+[23:25:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】𝙎𝙃𝘼𝙍𝙀🍗‘no cat版点了11个赞
+[23:25:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了8个赞
+[23:25:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】忆.：青石巷！
+[23:25:23] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】主动：笔记本要什么配置能玩？
+[23:25:23] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了10个赞
+[23:25:23] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】𝙎𝙃𝘼𝙍𝙀🍗‘no cat版点了1个赞
+[23:25:24] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了9个赞
+[23:25:24] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：770,累计观看人数：3.4万
+[23:25:25] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了9个赞
+[23:25:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】无敌凹凸曼.：能玩原版
+[23:25:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了9个赞
+[23:25:27] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】拇指：自从关注主播其他我的世界建筑都看不进去了
+[23:25:27] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了9个赞
+[23:25:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了7个赞
+[23:25:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】喂狗吃狗.点了3个赞
+[23:25:29] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】马铃薯小鬼：村民视察工作（确信）
+[23:25:30] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了3个赞
+[23:25:30] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】喂狗吃狗.点了5个赞
+[23:25:32] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：767,累计观看人数：3.4万
+[23:25:32] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了2个赞
+[23:25:33] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了7个赞
+[23:25:34] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了8个赞
+[23:25:35] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了10个赞
+[23:25:35] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】嬷嬷叽叽：@无敌凹凸曼. [流泪][流泪][流泪]
+[23:25:36] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了9个赞
+[23:25:37] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】京昭：@搏神明一笑 骨粉就可以的宝宝[比心][比心]
+[23:25:38] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：778,累计观看人数：3.4万
+[23:25:39] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了10个赞
+[23:25:41] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了8个赞
+[23:25:43] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了9个赞
+[23:25:45] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了7个赞
+[23:25:47] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】.晚风.：@京昭 我知道，但是知道他不玩，还是很难过[流泪]
+[23:25:47] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】希望明天没有悲伤点了2个赞
+[23:25:50] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：775,累计观看人数：3.4万
+[23:25:53] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】喂狗吃狗.：I5就能玩
+[23:25:54] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了7个赞
+[23:25:54] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】不梁人：你的每一期视频我都有看[色]
+[23:25:54] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】xxxttc：宇子 这瓜保熟嘛[看][看][比心][比心]
+[23:25:56] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:25:57] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:25:57] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了4个赞
+[23:25:58] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：770,累计观看人数：3.4万
+[23:26:00] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:26:00] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】𝘾𝙄𝙆𝙇⁵：晚安
+[23:26:00] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了8个赞
+[23:26:01] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】京昭：@搏神明一笑 骨头弄成骨粉在弄成白色的染料就很多了哦
+[23:26:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:26:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了8个赞
+[23:26:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：778,累计观看人数：3.4万
+[23:26:03] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了4个赞
+[23:26:07] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】August.82：怎么有点卡嘞
+[23:26:08] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：778,累计观看人数：3.4万
+[23:26:10] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：782,累计观看人数：3.4万
+[23:26:12] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】祂们叫我小鶴📸点了3个赞
+[23:26:14] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】祂们叫我小鶴📸点了2个赞
+[23:26:16] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：786,累计观看人数：3.4万
+[23:26:16] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】祂们叫我小鶴📸点了9个赞
+[23:26:18] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：779,累计观看人数：3.4万
+[23:26:18] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】祂们叫我小鶴📸点了6个赞
+[23:26:20] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：777,累计观看人数：3.4万
+[23:26:21] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】祂们叫我小鶴📸点了4个赞
+[23:26:23] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】飞天小洋葱：@.晚风. 他是不玩还是不喜欢你[看]
+[23:26:24] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：788,累计观看人数：3.4万
+[23:26:24] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】Chhh.点了7个赞
+[23:26:25] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】京昭：@.晚风. 带不动，而且他觉得不好玩[看]
+[23:26:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了5个赞
+[23:26:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】Chhh.点了9个赞
+[23:26:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】Chhh.点了7个赞
+[23:26:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了6个赞
+[23:26:30] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了8个赞
+[23:26:30] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：787,累计观看人数：3.4万
+[23:26:30] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】Chhh.点了8个赞
+[23:26:30] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了11个赞
+[23:26:32] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】Chhh.点了7个赞
+[23:26:32] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：772,累计观看人数：3.4万
+[23:26:32] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了10个赞
+[23:26:34] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】Chhh.点了10个赞
+[23:26:34] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】无敌凹凸曼.：是兄弟就来砍我[捂脸]
+[23:26:34] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了10个赞
+[23:26:36] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】Chhh.点了8个赞
+[23:26:36] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了11个赞
+[23:26:37] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】森林中落单的师子点了1个赞
+[23:26:38] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：772,累计观看人数：3.4万
+[23:26:38] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】Chhh.点了8个赞
+[23:26:38] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了10个赞
+[23:26:38] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】yyyyyy.送出了人气票x1
+[23:26:40] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】Chhh.点了4个赞
+[23:26:40] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了10个赞
+[23:26:41] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】那就晚安吧，：主播唱歌吧
+[23:26:41] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】yyyyyy.送出了人气票x1
+[23:26:42] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了11个赞
+[23:26:43] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】yyyyyy.送出了点亮粉丝团x1
+[23:26:44] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了10个赞
+[23:26:46] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】yyyyyy.送出了点亮粉丝团x1
+[23:26:46] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】yyyyyy.送出了粉丝团灯牌
+[23:26:46] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】Chhh.点了2个赞
+[23:26:46] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：773,累计观看人数：3.4万
+[23:26:46] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了10个赞
+[23:26:48] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】祂们叫我小鶴📸点了4个赞
+[23:26:48] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了9个赞
+[23:26:50] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了10个赞
+[23:26:52] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】飞天小洋葱：@无敌凹凸曼. 给你一🔪
+[23:26:52] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了10个赞
+[23:26:54] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：776,累计观看人数：3.5万
+[23:26:54] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了9个赞
+[23:26:56] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了9个赞
+[23:26:58] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了6个赞
+[23:27:00] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】.晚风.：啊？
+[23:27:00] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了8个赞
+[23:27:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：766,累计观看人数：3.5万
+[23:27:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】祂们叫我小鶴📸点了3个赞
+[23:27:03] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】酸梅子..：啥时候下播
+[23:27:04] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】祂们叫我小鶴📸点了8个赞
+[23:27:04] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了1个赞
+[23:27:04] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】木亏不亏：今天播到几点啊
+[23:27:06] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了2个赞
+[23:27:06] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】祂们叫我小鶴📸点了10个赞
+[23:27:08] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：770,累计观看人数：3.5万
+[23:27:08] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】祂们叫我小鶴📸点了1个赞
+[23:27:10] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】星洛：主播mc是什么版本的
+[23:27:11] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】August.82：没事 音痴也可以唱
+[23:27:14] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：760,累计观看人数：3.5万
+[23:27:15] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】xxxttc：有没有打算过露脸
+[23:27:16] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：757,累计观看人数：3.5万
+[23:27:17] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了3个赞
+[23:27:18] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：756,累计观看人数：3.5万
+[23:27:19] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】京昭：@木亏不亏 十一点半
+[23:27:20] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了10个赞
+[23:27:20] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：758,累计观看人数：3.5万
+[23:27:21] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】.晚风.：CPU烧干了
+[23:27:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了9个赞
+[23:27:23] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】飞天小洋葱：音痴:对音乐感到痴迷
+[23:27:24] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了6个赞
+[23:27:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了6个赞
+[23:27:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：759,累计观看人数：3.5万
+[23:27:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】saltyzz：煮啵唱一下我看看是不是音痴
+[23:27:29] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了8个赞
+[23:27:31] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:27:31] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】August.82：@xxxttc 不打算
+[23:27:31] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了8个赞
+[23:27:32] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：759,累计观看人数：3.5万
+[23:27:33] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:27:33] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了9个赞
+[23:27:34] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：758,累计观看人数：3.5万
+[23:27:34] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】京昭：@飞天小洋葱 哈哈哈哈[捂脸]
+[23:27:35] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:27:37] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:27:39] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:27:40] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：765,累计观看人数：3.5万
+[23:27:41] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】拇指：你下播了，我看什么
+[23:27:41] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】酸梅子..：强烈要求加班，看不够，根本看不够[比心]
+[23:27:41] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:27:43] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:27:45] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了9个赞
+[23:27:45] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】无敌凹凸曼.：还得是你洋葱老师[捂脸]
+[23:27:46] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了5个赞
+[23:27:47] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了6个赞
+[23:27:48] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了8个赞
+[23:27:48] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：764,累计观看人数：3.5万
+[23:27:49] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了3个赞
+[23:27:50] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了9个赞
+[23:27:51] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】搏神明一笑：@京昭 用堆肥桶搞骨粉吗，我开的困难模式，打怪太慢了
+[23:27:52] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了8个赞
+[23:27:54] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了7个赞
+[23:27:56] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了3个赞
+[23:27:56] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：759,累计观看人数：3.5万
+[23:27:57] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】大郎苟点了1个赞
+[23:27:58] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：764,累计观看人数：3.5万
+[23:27:59] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】星河入梦夕送出了小心心x1
+[23:28:00] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：759,累计观看人数：3.5万
+[23:28:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了7个赞
+[23:28:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：759,累计观看人数：3.5万
+[23:28:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】星河入梦夕送出了小心心x1
+[23:28:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】August.82：温馨提示 还有三分钟
+[23:28:04] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了2个赞
+[23:28:06] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】星洛：主播mc是什么版本的网易的吗
+[23:28:06] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了2个赞
+[23:28:06] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：752,累计观看人数：3.5万
+[23:28:08] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了5个赞
+[23:28:10] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】京昭：@搏神明一笑 可以去地狱挖骨块宝宝
+[23:28:10] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了4个赞
+[23:28:12] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：740,累计观看人数：3.5万
+[23:28:13] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】七七.~：刚来
+[23:28:14] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了3个赞
+[23:28:18] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了4个赞
+[23:28:18] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】.晚风.点了2个赞
+[23:28:18] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了5个赞
+[23:28:18] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：728,累计观看人数：3.5万
+[23:28:19] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】大紫茄子：国际版
+[23:28:20] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】清清_：刚刚看了恐怖的视频，请你别下播[流泪][比心]
+[23:28:20] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了6个赞
+[23:28:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】烏賊点了1个赞
+[23:28:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了1个赞
+[23:28:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：733,累计观看人数：3.5万
+[23:28:24] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】京昭：@搏神明一笑 用堆肥桶也可以，但是比较慢哦[比心]
+[23:28:24] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：728,累计观看人数：3.5万
+[23:28:25] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】ㅤ￰￰￰ㅤ⠀￰小宝：国际版
+[23:28:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：732,累计观看人数：3.5万
+[23:28:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：732,累计观看人数：3.5万
+[23:28:32] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：725,累计观看人数：3.5万
+[23:28:34] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：726,累计观看人数：3.5万
+[23:28:34] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】无敌凹凸曼.：可能是因为打不过
+[23:28:37] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】靠谱小狗送出了点亮粉丝团x1
+[23:28:40] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：721,累计观看人数：3.5万
+[23:28:40] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】羊咩咩点了4个赞
+[23:28:40] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】靠谱小狗送出了点亮粉丝团x1
+[23:28:41] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】靠谱小狗送出了粉丝团灯牌
+[23:28:46] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：730,累计观看人数：3.5万
+[23:28:50] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】星河入梦夕送出了粉丝团灯牌
+[23:28:50] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】烏賊点了2个赞
+[23:28:51] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】Sea：哇好可怕
+[23:28:51] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】京昭：好啊好啊[看][看]
+[23:28:52] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：731,累计观看人数：3.5万
+[23:28:52] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】烏賊点了8个赞
+[23:28:54] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】年♡：这是真鬼故事[捂脸]
+[23:28:55] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】飞天小洋葱：💀💀💀💀
+[23:28:56] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】木亏不亏：哈哈哈哈哈哈哈哈哈哈哈
+[23:28:56] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】轮廓线📎：你少来
+[23:28:56] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】靠谱小狗送出了为你闪耀x1
+[23:28:58] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：739,累计观看人数：3.5万
+[23:28:59] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】商序尔尔点了7个赞
+[23:29:00] [Render thread/INFO] (Minecraft) [System] [CHAT] 【礼物】靠谱小狗送出了为你闪耀x1
+[23:29:00] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】希望明天没有悲伤：啊哈哈哈哈鬼故事
+[23:29:01] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】商序尔尔点了9个赞
+[23:29:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：748,累计观看人数：3.5万
+[23:29:03] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】商序尔尔点了3个赞
+[23:29:03] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】那就晚安吧，：什么快捷键能直接从背包调出来
+[23:29:03] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】xxxttc：真够吓人的[看]
+[23:29:05] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】August.82：唱首歌再走[看]
+[23:29:05] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了1个赞
+[23:29:07] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了14个赞
+[23:29:08] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了1个赞
+[23:29:09] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了14个赞
+[23:29:09] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】轮廓线📎：到时候月末补直播了
+[23:29:10] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了6个赞
+[23:29:11] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】希望明天没有悲伤：这真是鬼故事
+[23:29:11] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】言归琑点了2个赞
+[23:29:11] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了13个赞
+[23:29:12] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】木亏不亏：讲讲我听听
+[23:29:12] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了8个赞
+[23:29:12] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：748,累计观看人数：3.5万
+[23:29:12] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】清清_：不要啊
+[23:29:13] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】搏神明一笑：@京昭 [爱心]
+[23:29:13] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:29:14] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了4个赞
+[23:29:15] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了13个赞
+[23:29:17] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了13个赞
+[23:29:18] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：748,累计观看人数：3.5万
+[23:29:19] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:29:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了13个赞
+[23:29:24] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:29:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:29:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了5个赞
+[23:29:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：753,累计观看人数：3.5万
+[23:29:27] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:29:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】xxxttc点了4个赞
+[23:29:30] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:29:30] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：754,累计观看人数：3.5万
+[23:29:31] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:29:32] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：738,累计观看人数：3.5万
+[23:29:34] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:29:34] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】Chhh.：哈哈哈哈哈[捂脸]
+[23:29:36] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:29:38] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:29:38] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：738,累计观看人数：3.5万
+[23:29:39] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】木亏不亏：补药啊[流泪]
+[23:29:39] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:29:39] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】August.82：唱歌听听[捂脸]
+[23:29:40] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：741,累计观看人数：3.5万
+[23:29:40] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】一夕承〆诺：网易版的是不是不能获得草方块
+[23:29:41] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:29:42] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】那就晚安吧，：鼠标有中键？？？？
+[23:29:44] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:29:44] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：746,累计观看人数：3.5万
+[23:29:44] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】珮橦点了1个赞
+[23:29:45] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:29:47] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了14个赞
+[23:29:47] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】星河入梦夕：什么鬼故事 我刚进来[捂脸]
+[23:29:50] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:29:50] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】京昭：@搏神明一笑 没事的宝宝[比心]
+[23:29:51] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:29:52] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：750,累计观看人数：3.5万
+[23:29:53] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:29:56] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:29:57] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:29:58] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：742,累计观看人数：3.5万
+[23:29:58] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】茉莉lai绿：可是我们还没困
+[23:29:59] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:30:01] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】.晚风.：@一夕承〆诺 精准采集就可以
+[23:30:01] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】飞天小洋葱：[捂脸]
+[23:30:01] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:30:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：740,累计观看人数：3.5万
+[23:30:02] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】那就晚安吧，：啊哈哈哈哈哈我才知道
+[23:30:04] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:30:04] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】蜂潮：你直播主业还是副业
+[23:30:04] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】August.82：@星河入梦夕 要下播了[看]
+[23:30:05] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:30:06] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】九禾点了1个赞
+[23:30:06] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】无敌凹凸曼.：@那就晚安吧， 那个轮子就是
+[23:30:07] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:30:09] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】那就晚安吧，：长知识了
+[23:30:09] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:30:11] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:30:13] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】司点了1个赞
+[23:30:13] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:30:15] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】司点了12个赞
+[23:30:15] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】August.82：时间到[看]
+[23:30:15] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:30:17] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】司点了6个赞
+[23:30:17] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了12个赞
+[23:30:18] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：740,累计观看人数：3.5万
+[23:30:19] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】司点了3个赞
+[23:30:19] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:30:20] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：739,累计观看人数：3.5万
+[23:30:21] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】司点了9个赞
+[23:30:21] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:30:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】飞天小洋葱：你的鼠标不会是真老鼠做的吧
+[23:30:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】无敌凹凸曼.：明天见吧[比心]
+[23:30:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】小小杰✔点了1个赞
+[23:30:23] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】司点了3个赞
+[23:30:23] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:30:24] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】一夕承〆诺：@.晚风. ok
+[23:30:24] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：739,累计观看人数：3.5万
+[23:30:25] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】走向遥远的远方（沉浸版）点了2个赞
+[23:30:25] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】走向遥远的远方（沉浸版）点了3个赞
+[23:30:26] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】清清_：@一夕承〆诺 用精准采集就可以
+[23:30:27] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了11个赞
+[23:30:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】星河入梦夕：@August.82 刚进来[捂脸]
+[23:30:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】走向遥远的远方（沉浸版）点了3个赞
+[23:30:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【统计】当前观看人数：742,累计观看人数：3.5万
+[23:30:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】Chhh.：呜呜呜，要下播了[流泪][流泪][流泪][流泪][流泪]
+[23:30:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】蜂潮：啥意思
+[23:30:28] [Render thread/INFO] (Minecraft) [System] [CHAT] 【消息】飲杯冰美式啦：好，下播[看]
+[23:30:29] [Render thread/INFO] (Minecraft) [System] [CHAT] 【点赞】铭 .点了10个赞
+[23:30:30] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[23:30:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[23:30:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[23:30:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[23:30:31] [Server thread/INFO] (Minecraft) Player97 lost connection: Disconnected
+[23:30:31] [Server thread/INFO] (Minecraft) Player97 left the game
+[23:30:31] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[23:30:31] [Server thread/INFO] (Minecraft) Stopping server
+[23:30:31] [Server thread/INFO] (Minecraft) Saving players
+[23:30:31] [Server thread/INFO] (Minecraft) Saving worlds
+[23:30:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[23:30:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[23:30:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[23:30:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World): All chunks are saved
+[23:30:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[23:30:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[23:30:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[23:30:32] [Render thread/INFO] (Minecraft) Stopping!
