@@ -12,7 +12,7 @@ public class WebSocketClient {
     WebSocket ws;
     WSListener Listener = null;
 
-    public WebSocketClient(ServerCommandSource source) {
+    public void init(ServerCommandSource source) {
         this.source = source;
         this.Listener = new WSListener(source);
     }
@@ -60,6 +60,10 @@ public class WebSocketClient {
     }
 
     public boolean isConnected() {
-        return Listener.isConnected();
+        if (ws == null) {
+            return false;
+        }else{
+            return Listener.isConnected();
+        }
     }
 }

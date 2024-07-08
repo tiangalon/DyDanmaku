@@ -48,7 +48,9 @@ public class WSListener extends WebSocketListener {
 
     @Override
     public void onFailure(WebSocket webSocket, Throwable t, Response response){
+        source.getPlayer().sendMessage(Text.literal("§c[INFO]§fDyDanmaku连接已关闭"));
         isConnected = false;
+        t.printStackTrace();
     }
 
     @Override
@@ -89,7 +91,8 @@ public class WSListener extends WebSocketListener {
                         //聊天消息
                         case "WebcastChatMessage":
                             Douyin.ChatMessage ChatMessage = Douyin.ChatMessage.parseFrom(SingleMsg.getPayload());
-                            source.getPlayer().sendMessage(Text.literal("【消息】" + ChatMessage.getUser().getNickName() + "：" + ChatMessage.getContent()));
+                            source.getPlayer().sendMessage(Text.literal("§b[消息]§f" + ChatMessage.getUser().getNickName() + "：" + ChatMessage.getContent()));
+
                             break;
 
                         /*
@@ -100,28 +103,31 @@ public class WSListener extends WebSocketListener {
                             break;
                         */
 
+                        /*
                         //直播间统计消息
                         case "WebcastRoomUserSeqMessage":
                             Douyin.RoomUserSeqMessage RoomUserSeqMessage = Douyin.RoomUserSeqMessage.parseFrom(SingleMsg.getPayload());
-                            source.getPlayer().sendMessage(Text.literal("【统计】当前观看人数：" + RoomUserSeqMessage.getTotalStr() + ",累计观看人数：" + RoomUserSeqMessage.getTotalPvForAnchor()));
+                            source.getPlayer().sendMessage(Text.literal("{\"text\" : \"[统计]\" , \"color\" : \"yellow\", \"bold\" : \"true\"}" + "当前观看人数：" + RoomUserSeqMessage.getTotalStr() + ",累计观看人数：" + RoomUserSeqMessage.getTotalPvForAnchor()));
                             break;
+                            */
 
                         //点赞消息
                         case "WebcastLikeMessage":
                             Douyin.LikeMessage LikeMessage = Douyin.LikeMessage.parseFrom(SingleMsg.getPayload());
-                            source.getPlayer().sendMessage(Text.literal("【点赞】" + LikeMessage.getUser().getNickName() + "点了" + LikeMessage.getCount() + "个赞"));
+                            source.getPlayer().sendMessage(Text.literal("§d[点赞]§f" + LikeMessage.getUser().getNickName() + "点了" + LikeMessage.getCount() + "个赞"));
+
                             break;
 
                         //礼物消息
                         case "WebcastGiftMessage":
                             Douyin.GiftMessage GiftMessage = Douyin.GiftMessage.parseFrom(SingleMsg.getPayload());
-                            source.getPlayer().sendMessage(Text.literal("【礼物】" + GiftMessage.getUser().getNickName() + "送出了" + GiftMessage.getGift().getName() + (GiftMessage.getGift().getCombo()? "x" + GiftMessage.getComboCount() : "")));
+                            source.getPlayer().sendMessage(Text.literal("§a[礼物]§f" + GiftMessage.getUser().getNickName() + "送出了" + GiftMessage.getGift().getName() + (GiftMessage.getGift().getCombo()? "x" + GiftMessage.getComboCount() : "")));
                             break;
 
                         //粉丝团消息
                         case "WebcastFansclubMessage":
                             Douyin.FansclubMessage FansclubMessage = Douyin.FansclubMessage.parseFrom(SingleMsg.getPayload());
-                            source.getPlayer().sendMessage(Text.literal("【粉丝团】" + FansclubMessage.getContent()));
+                            source.getPlayer().sendMessage(Text.literal("§6[粉丝团]§f" + FansclubMessage.getContent()));
                             break;
                         default:
                             //System.out.println("未分类消息: " + method);
