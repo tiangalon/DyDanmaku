@@ -100,7 +100,7 @@ public class DyDanmaku implements ModInitializer {
             File ConfigDir = new File(ConfigDirPath);
             if  (!ConfigDir.exists()  && !ConfigDir.isDirectory()) {
                 LOGGER.info("[DyDanmaku]/config/DyDanmaku不存在,创建目录");
-                ConfigDir.mkdir();
+                ConfigDir.mkdirs();
             } else {
                 LOGGER.info("[DyDanmaku]/config/DyDanmaku目录存在");
             }
