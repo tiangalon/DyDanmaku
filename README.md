@@ -47,7 +47,7 @@
 <p>本人偶尔在抖音直播mc，用直播伴侣的时候看弹幕比较麻烦，而且会发生严重的掉帧，于是想到有没有模组能直接把弹幕发送到游戏内，这样抓取一下推流码即可实现完全摆脱直播伴侣</p>
 <p>去搜了下，发现<a href="https://github.com/TartaricAcid/BakaDanmaku">BakaDanmaku</a>可实现类似的功能，可惜仅支持b站弹幕，所以照着它的效果图写了个抖音版的</p>
 <p>没有参考代码，但是参考了起名(</p>
-<p>期间还有个试做品<a href="https://github.com/tiangalon/dy_danmaku_java">BakaDanmaku</a>，代码思路差不多，也许参考意义更大</p>
+<p>期间还有个试做品<a href="https://github.com/tiangalon/dy_danmaku_java">dy_danmaku_java</a>，代码思路差不多，也许参考意义更大</p>
 
 ### 使用指南
 
