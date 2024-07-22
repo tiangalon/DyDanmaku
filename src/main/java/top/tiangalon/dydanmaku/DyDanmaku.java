@@ -31,14 +31,14 @@ public class DyDanmaku implements ModInitializer {
 
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             dispatcher.register(CommandManager.literal("dydanmaku").executes(context -> {
-                    context.getSource().sendFeedback(() -> Text.literal("[DyDanmaku]Called /dydanmaku with no arguments."), false);
+                    context.getSource().sendFeedback(Text.literal("[DyDanmaku]Called /dydanmaku with no arguments."), false);
                     return Command.SINGLE_SUCCESS;
                 })
                     .then(CommandManager.literal("connect")
                             .then(CommandManager.argument("live_id", StringArgumentType.string())
                                 .executes(context -> {
                                     if (websocket.isConnected) {
-                                        context.getSource().sendFeedback(() -> Text.literal("[DyDanmaku]已经连接到房间，无法重复连接"), false);
+                                        context.getSource().sendFeedback(Text.literal("[DyDanmaku]已经连接到房间，无法重复连接"), false);
                                         LOGGER.info("[DyDanmaku]已经连接到房间，无法重复连接");
                                         return Command.SINGLE_SUCCESS;
                                     }
@@ -46,11 +46,11 @@ public class DyDanmaku implements ModInitializer {
                                     Map<String, String> params = myRequest.getParams(live_id);
                                     LOGGER.info("[DyDanmaku]直播间参数： " + params);
                                     if (params == null) {
-                                        context.getSource().sendFeedback(() -> Text.literal("[DyDanmaku]无法获取房间号：" + live_id + " 的参数,请检查网络环境或房间号是否正确"), false);
+                                        context.getSource().sendFeedback(Text.literal("[DyDanmaku]无法获取房间号：" + live_id + " 的参数,请检查网络环境或房间号是否正确"), false);
                                         LOGGER.info("[DyDanmaku]无法获取房间号：" + live_id + " 的参数,请检查网络环境或房间号是否正确");
                                     } else{
                                         if (websocket.isConnected) {
-                                            context.getSource().sendFeedback(() -> Text.literal("[DyDanmaku]已经连接到房间号：" + live_id + "，无法重复连接"), false);
+                                            context.getSource().sendFeedback(Text.literal("[DyDanmaku]已经连接到房间号：" + live_id + "，无法重复连接"), false);
                                             LOGGER.info("[DyDanmaku]已经连接到房间号：" + live_id + "，无法重复连接");
                                         }
                                         else {
@@ -73,7 +73,7 @@ public class DyDanmaku implements ModInitializer {
                     .then(CommandManager.literal("disconnect")
                             .executes(context -> {
                                 if (!websocket.isConnected) {
-                                    context.getSource().sendFeedback(() -> Text.literal("[DyDanmaku]尚未连接到房间，无法断开连接"), false);
+                                    context.getSource().sendFeedback(Text.literal("[DyDanmaku]尚未连接到房间，无法断开连接"), false);
                                     LOGGER.info("[DyDanmaku]尚未连接到房间，无法断开连接");
                                     return Command.SINGLE_SUCCESS;
                                 }else{
