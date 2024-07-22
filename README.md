@@ -25,9 +25,7 @@
     <a href="https://github.com/tiangalon/DyDanmaku/issues">报告Bug</a>
     ·
     <a href="https://github.com/tiangalon/DyDanmaku/issues">提出新特性</a>
-  </p>
 
-</p>
 <h3>注意：该模组正处于早期开发阶段，支持版本较少，且仅为单人游戏设计，可能会出现bug或者是兼容性问题，请谨慎使用</h3>
 <h3>注意：该模组仅供学习交流使用，请勿用于商业，甚至是违法犯罪用途，违者后果自负</h3>
  
@@ -93,8 +91,7 @@ live_id为抖音直播间链接最后的数字部分，比如某人直播间链�
 
 ### 鸣谢
 
-##### 部分依赖来源 
-<s>不放源码进去我编译不出来</s>
+##### 部分依赖来源
 - [protobuffers](https://github.com/protocolbuffers/protobuf)
 - [netty](https://netty.io/)
 - [dy_danmaku_java](https://github.com/tiangalon/dy_danmaku_java)
