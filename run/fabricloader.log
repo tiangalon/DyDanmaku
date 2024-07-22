@@ -1,0 +1,25 @@
+[15:18:35] [ERROR] [FabricLoader/]: Uncaught exception in thread "main"
+net.fabricmc.loader.impl.util.ExceptionUtil$WrappedException: java.io.IOException: error reading C:\Users\tao\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin.jvm\org.jetbrains.kotlin.jvm.gradle.plugin\2.0.0\6fe4b927738ddce421f9db01e81425cb095d6588\org.jetbrains.kotlin.jvm.gradle.plugin-2.0.0.pom
+	at net.fabricmc.loader.impl.util.ExceptionUtil.wrap(ExceptionUtil.java:51)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.locateGame(MinecraftGameProvider.java:240)
+	at net.fabricmc.loader.impl.launch.knot.Knot.createGameProvider(Knot.java:175)
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:130)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+Caused by: java.io.IOException: error reading C:\Users\tao\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin.jvm\org.jetbrains.kotlin.jvm.gradle.plugin\2.0.0\6fe4b927738ddce421f9db01e81425cb095d6588\org.jetbrains.kotlin.jvm.gradle.plugin-2.0.0.pom
+	at net.fabricmc.loader.impl.game.LibClassifier.process(LibClassifier.java:216)
+	at net.fabricmc.loader.impl.game.LibClassifier.process(LibClassifier.java:163)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.locateGame(MinecraftGameProvider.java:189)
+	... 5 more
+Caused by: java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1483)
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1491)
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1329)
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1292)
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:710)
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243)
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172)
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:186)
+	at net.fabricmc.loader.impl.game.LibClassifier.process(LibClassifier.java:203)
+	... 7 more

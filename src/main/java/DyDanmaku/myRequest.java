@@ -12,6 +12,8 @@ import org.apache.http.util.EntityUtils;
 import java.util.HashMap;
 import java.util.Map;
 
+import static top.tiangalon.dydanmaku.DyDanmaku.LOGGER;
+
 
 public class myRequest {
 
@@ -29,9 +31,9 @@ public class myRequest {
         String roomId = null;
         String user_unique_id = null;
         Map<String, String> params = new HashMap<String, String>();
-        CloseableHttpClient httpClient = HttpClients.createDefault();
 
         try {
+            CloseableHttpClient httpClient = HttpClients.createDefault();
             HttpGet httpGet = new HttpGet(url);
             httpGet.setHeader("User-Agent", User_Agent);
             httpGet.setHeader("cookie", "__ac_nonce=0" + GenerateToken(20)+ ";/=" +  "live.douyin.com");
@@ -41,16 +43,7 @@ public class myRequest {
             if(response != null){
                 HttpEntity entity = response.getEntity();   // 获取网页内容
                 String result = EntityUtils.toString(entity, "UTF-8");
-                /*
-                *正则表达式匹配，实测用时过长，弃用
-                String pattern = ".*((?<=roomId\\\":\\\")\\d+).*";
-                Pattern r = Pattern.compile(pattern);
-                Matcher m = r.matcher(result);
-                //System.out.println("匹配结果：" + m.group());
-                while (m.find()) {
-                    System.out.println("Found roomId: " + m.group());
-                }
-                */
+
                 roomId = result.substring(result.indexOf("roomId")+11, result.indexOf("roomId") + 30);
                 user_unique_id = result.substring(result.indexOf("user_unique_id")+19, result.indexOf("user_unique_id") + 38);
                 params.put("roomId", roomId);
@@ -65,11 +58,10 @@ public class myRequest {
                     }
                 }
                 params.put("ttwid", ttwid);
-
             }
             return params;
         }catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.info(e.getMessage());
             return null;
         }
     }
