@@ -1,6 +1,8 @@
 package DyDanmaku;
 
 import org.apache.http.HttpEntity;
+import org.apache.http.client.config.CookieSpecs;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -15,9 +17,11 @@ import java.util.Map;
 import static top.tiangalon.dydanmaku.DyDanmaku.LOGGER;
 
 
-public class myRequest {
+public class DyDanmakuRequest {
 
-     public static String User_Agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
+     RequestConfig defaultConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
+
+     public static String User_Agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 
     /**
      *  获取抖音ttwid
@@ -30,13 +34,21 @@ public class myRequest {
         String ttwid = null;
         String roomId = null;
         String user_unique_id = null;
+        String live_status = null;
+        String live_title = null;
+        String nickname = null;
+        String avatar = null;
         Map<String, String> params = new HashMap<String, String>();
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+
+
 
         try {
-            CloseableHttpClient httpClient = HttpClients.createDefault();
             HttpGet httpGet = new HttpGet(url);
+            RequestConfig defaultConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
             httpGet.setHeader("User-Agent", User_Agent);
             httpGet.setHeader("cookie", "__ac_nonce=0" + GenerateToken(20)+ ";/=" +  "live.douyin.com");
+            httpGet.setConfig(defaultConfig);
             CloseableHttpResponse response = httpClient.execute(httpGet);
 
 
@@ -44,10 +56,22 @@ public class myRequest {
                 HttpEntity entity = response.getEntity();   // 获取网页内容
                 String result = EntityUtils.toString(entity, "UTF-8");
 
-                roomId = result.substring(result.indexOf("roomId")+11, result.indexOf("roomId") + 30);
-                user_unique_id = result.substring(result.indexOf("user_unique_id")+19, result.indexOf("user_unique_id") + 38);
+                roomId = result.substring(result.lastIndexOf("roomId")+11, result.lastIndexOf("roomId") + 30);
+                user_unique_id = result.substring(result.indexOf("\\\"user_unique_id\\\":\\\"")+21, result.indexOf("\\\"user_unique_id\\\":\\\"") + 40);
+                live_status = result.substring(result.indexOf("\\\"status_str\\\":")+17, result.indexOf("\\\"status_str\\\":") + 18);
+                String temp = result.substring(result.indexOf("\\\"status_str\\\":")+21);
+                live_title = temp.substring(temp.indexOf("\\\"title\\\":\\\"")+12, temp.indexOf("\\\"title\\\":\\\"") + 100);
+                live_title = live_title.substring(0, live_title.indexOf("\\"));
+                nickname = temp.substring(temp.indexOf("\\\"nickname\\\":\\\"")+15, temp.indexOf("\\\"nickname\\\":\\\"") + 100);
+                nickname = nickname.substring(0, nickname.indexOf("\\"));
+                avatar = temp.substring(temp.indexOf("\\\"avatar_thumb\\\":{\\\"url_list\\\":[\\\"")+34, temp.indexOf("\\\"avatar_thumb\\\":{\\\"url_list\\\":[\\\"") + 250);
+                avatar = avatar.substring(0, avatar.indexOf("\\"));
                 params.put("roomId", roomId);
                 params.put("user_unique_id", user_unique_id);
+                params.put("live_status", live_status);
+                params.put("live_title", live_title);
+                params.put("nickname", nickname);
+                params.put("avatar", avatar);
 
 
                 Header responseHeader = response.getFirstHeader("Set-Cookie");
@@ -58,10 +82,11 @@ public class myRequest {
                     }
                 }
                 params.put("ttwid", ttwid);
+
             }
             return params;
         }catch (Exception e) {
-            LOGGER.info(e.getMessage());
+            LOGGER.info("[DyDanmaku]getParams error:", e);
             return null;
         }
     }
