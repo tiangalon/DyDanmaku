@@ -5,7 +5,7 @@
       <directory url="file://$PROJECT_DIR$/src/main/java/com/google/protobuf" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/src/main/java/io" includeSubdirectories="true" />
     </excludeFromCompile>
-    <bytecodeTargetLevel target="19" />
+    <bytecodeTargetLevel target="22" />
   </component>
   <component name="EclipseCompilerSettings">
     <option name="DEPRECATION" value="false" />

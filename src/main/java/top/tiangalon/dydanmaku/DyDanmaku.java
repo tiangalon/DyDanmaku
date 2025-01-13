@@ -1,6 +1,7 @@
 package top.tiangalon.dydanmaku;
 
 import com.mojang.brigadier.Command;
+import net.minecraft.server.command.ServerCommandSource;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -14,15 +15,18 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-import static DyDanmaku.WebSocketClientNetty.getSignFile;
+import static DyDanmaku.WebSocketClient.getSignFile;
+
 
 public class DyDanmaku implements ModInitializer {
     public static final String MOD_ID = "DyDanmaku";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    public static WebSocketClientNetty websocket = new WebSocketClientNetty();
+    public static WebSocketClient websocket = new WebSocketClient();
 
-    public static String DyDanmakuPath = WebSocketClientNetty.getPath();
+    public static String DyDanmakuPath = WebSocketClient.getPath();
     public static String ConfigDirPath = DyDanmakuPath.substring(0, DyDanmakuPath.lastIndexOf("/")) + "/config/DyDanmaku";
+
+    public ServerCommandSource gameSource;
 
     @Override
     public void onInitialize() {
@@ -37,26 +41,25 @@ public class DyDanmaku implements ModInitializer {
                     .then(CommandManager.literal("connect")
                             .then(CommandManager.argument("live_id", StringArgumentType.string())
                                 .executes(context -> {
-                                    if (websocket.isConnected) {
+                                    if (websocket.isConnected()) {
                                         context.getSource().sendFeedback(() -> Text.literal("[DyDanmaku]已经连接到房间，无法重复连接"), false);
                                         LOGGER.info("[DyDanmaku]已经连接到房间，无法重复连接");
                                         return Command.SINGLE_SUCCESS;
                                     }
                                     String live_id = StringArgumentType.getString(context, "live_id");
-                                    Map<String, String> params = myRequest.getParams(live_id);
-                                    LOGGER.info("[DyDanmaku]直播间参数： " + params);
+                                    Map<String, String> params = DyDanmakuRequest.getParams(live_id);
+                                    //LOGGER.info("[DyDanmaku]直播间参数： " + params);
                                     if (params == null) {
                                         context.getSource().sendFeedback(() -> Text.literal("[DyDanmaku]无法获取房间号：" + live_id + " 的参数,请检查网络环境或房间号是否正确"), false);
                                         LOGGER.info("[DyDanmaku]无法获取房间号：" + live_id + " 的参数,请检查网络环境或房间号是否正确");
                                     } else{
-                                        if (websocket.isConnected) {
+                                        if (websocket.isConnected()) {
                                             context.getSource().sendFeedback(() -> Text.literal("[DyDanmaku]已经连接到房间号：" + live_id + "，无法重复连接"), false);
                                             LOGGER.info("[DyDanmaku]已经连接到房间号：" + live_id + "，无法重复连接");
                                         }
                                         else {
                                             try {
-                                                websocket.init(params.get("roomId"), params.get("user_unique_id"), params.get("ttwid"), context.getSource());
-                                                websocket.run();
+                                                websocket.connect(params, context.getSource());
                                             } catch (Exception e) {
                                                 LOGGER.info("[DyDanmaku]无法连接房间：" + live_id, e);
                                                 context.getSource().getPlayer().sendMessage(Text.literal("[DyDanmaku]无法连接房间：" + live_id));
@@ -72,7 +75,7 @@ public class DyDanmaku implements ModInitializer {
                     )
                     .then(CommandManager.literal("disconnect")
                             .executes(context -> {
-                                if (!websocket.isConnected) {
+                                if (!websocket.isConnected()) {
                                     context.getSource().sendFeedback(() -> Text.literal("[DyDanmaku]尚未连接到房间，无法断开连接"), false);
                                     LOGGER.info("[DyDanmaku]尚未连接到房间，无法断开连接");
                                     return Command.SINGLE_SUCCESS;
@@ -89,7 +92,7 @@ public class DyDanmaku implements ModInitializer {
     }
 
     public static boolean isRunInJar() {
-        String runType = String.valueOf(WebSocketClientNetty.class.getResource("WebSocketClientNetty.class"));
+        String runType = String.valueOf(WebSocketClient.class.getResource("WebSocketClient.class"));
         return runType != null && runType.startsWith("jar:");
     }
 
