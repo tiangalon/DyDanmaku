@@ -28,14 +28,18 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    // https://mvnrepository.com/artifact/io.netty/netty-codec-http
-    implementation 'io.netty:netty-codec-http:4.1.82.Final'
-
     // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
     implementation 'com.google.protobuf:protobuf-java:4.27.2'
 
     // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
-    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.12.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.1.0'
+
+    // https://mvnrepository.com/artifact/com.squareup.okio/okio
+    implementation 'com.squareup.okio:okio:3.10.2'
+
 
 
 
@@ -86,7 +90,9 @@ jar {
 shadowJar {
     dependencies{
         include(dependency('com.squareup.okhttp3:okhttp:4.12.0'))
+        include(dependency('com.squareup.okio:okio-jvm:3.10.2'))
         include(dependency('com.google.protobuf:protobuf-java:4.27.2'))
+        include(dependency('org.jetbrains.kotlin:kotlin-stdlib:2.1.0'))
     }
 }
 

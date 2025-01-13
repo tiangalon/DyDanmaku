@@ -92,7 +92,7 @@ public class DyDanmaku implements ModInitializer {
     }
 
     public static boolean isRunInJar() {
-        String runType = String.valueOf(WebSocketClient.class.getResource("WebSocketClientNetty.class"));
+        String runType = String.valueOf(WebSocketClient.class.getResource("WebSocketClient.class"));
         return runType != null && runType.startsWith("jar:");
     }
 
