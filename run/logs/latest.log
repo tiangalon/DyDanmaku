@@ -1,6 +1,6 @@
-[00:35:25] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19 with Fabric Loader 0.15.11
-[00:35:25] [main/INFO] (FabricLoader) Loading 44 mods:
-	- dydanmaku 0.1.1
+[19:19:40] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19 with Fabric Loader 0.15.11
+[19:19:41] [main/INFO] (FabricLoader) Loading 44 mods:
+	- dydanmaku 0.1.2
 	- fabric 0.55.1+1.19
 	- fabric-api-base 0.4.8+e62f51a357
 	- fabric-api-lookup-api-v1 1.6.5+9ff28f4057
@@ -44,22 +44,23 @@
 	- java 19
 	- minecraft 1.19
 	- mixinextras 0.3.5
-[00:35:25] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/tao/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
-[00:35:25] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[00:35:25] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
-[00:35:25] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[00:35:26] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
-[00:35:29] [main/INFO] (Minecraft) Building optimized datafixer
-[00:35:34] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[00:35:35] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+[19:19:41] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/tao/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
+[19:19:41] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[19:19:41] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[19:19:41] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[19:19:42] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
+[19:19:45] [main/INFO] (Minecraft) Building optimized datafixer
+[19:19:49] [Render thread/INFO] (Minecraft) [STDERR]: [LWJGL] [ThreadLocalUtil] Unsupported JNI version detected, this may result in a crash. Please inform LWJGL developers.
+[19:19:50] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[19:19:51] [Render thread/ERROR] (Minecraft) Failed to verify authentication
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-3.5.41.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:140) ~[authlib-3.5.41.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.<init>(YggdrasilUserApiService.java:47) ~[authlib-3.5.41.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.createUserApiService(YggdrasilAuthenticationService.java:158) ~[authlib-3.5.41.jar:?]
-	at net.minecraft.client.MinecraftClient.createUserApiService(MinecraftClient.java:677) [minecraft-merged-1d19e2a722-1.19-net.fabricmc.yarn.1_19.1.19+build.4-v2.jar:?]
-	at net.minecraft.client.MinecraftClient.<init>(MinecraftClient.java:415) [minecraft-merged-1d19e2a722-1.19-net.fabricmc.yarn.1_19.1.19+build.4-v2.jar:?]
-	at net.minecraft.client.main.Main.main(Main.java:198) [minecraft-merged-1d19e2a722-1.19-net.fabricmc.yarn.1_19.1.19+build.4-v2.jar:?]
+	at net.minecraft.client.MinecraftClient.createUserApiService(MinecraftClient.java:677) [minecraft-clientOnly-1d19e2a722-1.19-net.fabricmc.yarn.1_19.1.19+build.4-v2.jar:?]
+	at net.minecraft.client.MinecraftClient.<init>(MinecraftClient.java:415) [minecraft-clientOnly-1d19e2a722-1.19-net.fabricmc.yarn.1_19.1.19+build.4-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:198) [minecraft-clientOnly-1d19e2a722-1.19-net.fabricmc.yarn.1_19.1.19+build.4-v2.jar:?]
 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:470) [fabric-loader-0.15.11.jar:?]
 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) [fabric-loader-0.15.11.jar:?]
 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) [fabric-loader-0.15.11.jar:?]
@@ -69,15 +70,15 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-3.5.41.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:121) ~[authlib-3.5.41.jar:?]
 	... 9 more
-[00:35:35] [Render thread/INFO] (Minecraft) Setting user: Player352
-[00:35:36] [Render thread/INFO] (DyDanmaku) DyDanmaku initialized
-[00:35:36] [Render thread/INFO] (DyDanmaku) [DyDanmaku]DyDanmaku is Running in IDE
-[00:35:36] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[00:35:37] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.2-snapshot
-[00:35:40] [Worker-Main-16/ERROR] (Minecraft) Failed to retrieve profile key pair
+[19:19:51] [Render thread/INFO] (Minecraft) Setting user: Player388
+[19:19:52] [Render thread/INFO] (DyDanmaku) DyDanmaku initialized
+[19:19:52] [Render thread/INFO] (DyDanmaku) [DyDanmaku]DyDanmaku is Running in IDE
+[19:19:52] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[19:19:53] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.1 SNAPSHOT
+[19:19:58] [Worker-Main-16/ERROR] (Minecraft) Failed to retrieve profile key pair
 java.io.IOException: Could not retrieve profile key pair
-	at net.minecraft.client.util.ProfileKeys.fetchKeyPair(ProfileKeys.java:112) ~[minecraft-merged-1d19e2a722-1.19-net.fabricmc.yarn.1_19.1.19+build.4-v2.jar:?]
-	at net.minecraft.client.util.ProfileKeys.method_44291(ProfileKeys.java:56) ~[minecraft-merged-1d19e2a722-1.19-net.fabricmc.yarn.1_19.1.19+build.4-v2.jar:?]
+	at net.minecraft.client.util.ProfileKeys.fetchKeyPair(ProfileKeys.java:112) ~[minecraft-clientOnly-1d19e2a722-1.19-net.fabricmc.yarn.1_19.1.19+build.4-v2.jar:?]
+	at net.minecraft.client.util.ProfileKeys.method_44291(ProfileKeys.java:56) ~[minecraft-clientOnly-1d19e2a722-1.19-net.fabricmc.yarn.1_19.1.19+build.4-v2.jar:?]
 	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) [?:?]
 	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) [?:?]
 	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
@@ -85,95 +86,139 @@ java.io.IOException: Could not retrieve profile key pair
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1840) [?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1806) [?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177) [?:?]
-[00:35:40] [Render thread/INFO] (Minecraft) Reloading ResourceManager: Default, Fabric Mods (Fabric Crash Report Info (v1), Fabric Loader, Fabric Game Rule API (v1), Fabric Networking API (v1), Fabric Lifecycle Events (v1), Fabric Renderer - Indigo, Fabric Content Registries (v0), Fabric Biome API (v1), Fabric Mining Level API (v1), Fabric Item Groups (v0), Fabric Resource Conditions API (v1), Fabric BlockRenderLayer Registration (v1), Fabric Command API (v2), Fabric Convention Tags, Fabric Game Test API (v1), Fabric Key Binding API (v1), Fabric API Lookup API (v1), Fabric Transitive Access Wideners (v1), Fabric Models (v0), Fabric Object Builder API (v1), Fabric Item API (v1), DyDanmaku, Fabric API Base, Fabric Entity Events (v1), Fabric Screen Handler API (v1), Fabric Rendering (v1), Fabric Screen API (v1), Fabric Renderer API (v1), Fabric Particles (v1), Fabric Message API (v1), Fabric Resource Loader (v0), Fabric Dimensions API (v1), Fabric Events Interaction (v0), Fabric Textures (v0), Fabric Rendering Data Attachment (v1), Fabric Loot API (v2), Fabric Transfer API (v1), Fabric Registry Sync (v0), Fabric Data Generation API (v1), Fabric Rendering Fluids (v1), Fabric API)
-[00:35:41] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
-[00:35:43] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[00:35:43] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[00:35:43] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
-[00:35:43] [Render thread/INFO] (Minecraft) Sound engine started
-[00:35:43] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
-[00:35:43] [Render thread/INFO] (Minecraft) Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
-[00:35:43] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[00:35:43] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[00:35:43] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[00:35:43] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[00:35:43] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[00:35:45] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[00:35:45] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[00:35:45] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[00:35:45] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[00:35:45] [Worker-Bootstrap-5/INFO] (Minecraft) 4256 Datafixer optimizations took 16444 milliseconds
-[00:35:54] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[00:35:54] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
-[00:36:02] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 1.596 ms
-[00:36:02] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19
-[00:36:02] [Server thread/INFO] (Minecraft) Generating keypair
-[00:36:10] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[00:36:11] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[00:36:11] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[00:36:11] [Render thread/INFO] (Minecraft) Preparing spawn area: 1%
-[00:36:12] [Render thread/INFO] (Minecraft) Preparing spawn area: 4%
-[00:36:12] [Render thread/INFO] (Minecraft) Preparing spawn area: 7%
-[00:36:13] [Render thread/INFO] (Minecraft) Preparing spawn area: 11%
-[00:36:13] [Render thread/INFO] (Minecraft) Preparing spawn area: 16%
-[00:36:14] [Render thread/INFO] (Minecraft) Preparing spawn area: 19%
-[00:36:14] [Render thread/INFO] (Minecraft) Preparing spawn area: 24%
-[00:36:15] [Render thread/INFO] (Minecraft) Preparing spawn area: 29%
-[00:36:15] [Render thread/INFO] (Minecraft) Preparing spawn area: 34%
-[00:36:16] [Render thread/INFO] (Minecraft) Preparing spawn area: 39%
-[00:36:16] [Render thread/INFO] (Minecraft) Preparing spawn area: 45%
-[00:36:17] [Render thread/INFO] (Minecraft) Preparing spawn area: 52%
-[00:36:17] [Render thread/INFO] (Minecraft) Preparing spawn area: 57%
-[00:36:18] [Render thread/INFO] (Minecraft) Preparing spawn area: 64%
-[00:36:18] [Render thread/INFO] (Minecraft) Preparing spawn area: 69%
-[00:36:19] [Render thread/INFO] (Minecraft) Preparing spawn area: 72%
-[00:36:19] [Render thread/INFO] (Minecraft) Preparing spawn area: 77%
-[00:36:20] [Render thread/INFO] (Minecraft) Preparing spawn area: 83%
-[00:36:20] [Render thread/INFO] (Minecraft) Preparing spawn area: 88%
-[00:36:21] [Render thread/INFO] (Minecraft) Preparing spawn area: 94%
-[00:36:21] [Render thread/INFO] (Minecraft) Time elapsed: 10835 ms
-[00:36:21] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[00:36:21] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[00:36:22] [Server thread/INFO] (Minecraft) Player352[local:E:5280c370] logged in with entity id 239 at (14.5, 63.0, 8.5)
-[00:36:22] [Server thread/INFO] (Minecraft) Player352 joined the game
-[00:36:24] [Render thread/INFO] (Minecraft) Loaded 0 advancements
-[00:36:34] [Server thread/INFO] (DyDanmaku) [DyDanmaku]直播间参数： {user_unique_id=7394499872814827060, ttwid=1%7CHXVbtha0hEhT65aHgvFtDkAQlcKIB8YehW8szbtvbLk%7C1721666193%7Cd3ff53b514d2454170e7b06190ad05b38dc6c51081f2a896133dbd19e11558d0, roomId=7394492827389922048}
-[00:36:35] [Server thread/INFO] (DyDanmaku) [DyDanmaku]已经连接到房间号：245950735418
-[00:36:35] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 2239ms or 44 ticks behind
-[00:36:35] [Render thread/INFO] (Minecraft) [CHAT] [DyDanmaku]已经连接到房间号：245950735418
-[00:36:35] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f炸Yu薯条：@bright 我的世界
-[00:36:35] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f月季园💤：这样好好看
-[00:36:35] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f橙熟.：@困花野 恭喜恭喜🎉
-[00:36:35] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f晚夜微雨：不要
-[00:36:35] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f抑郁方便面送出了点亮粉丝团x1
-[00:36:35] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§fReufndv：为啥刚刚那里不种花了
-[00:36:36] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f你小点声我布隆：一般播到几点啊宝宝
-[00:36:36] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f欧豆豆点了9个赞
-[00:36:38] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f草莓布丁：@千叶 自己建的太吐了哈哈哈
-[00:36:38] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f抑郁方便面送出了点亮粉丝团x1
-[00:36:38] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§fReufndv点了3个赞
-[00:36:38] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f欧豆豆点了9个赞
-[00:36:40] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f⁺✞ʚ蜂乐回重度依赖ɞ✟₊点了2个赞
-[00:36:41] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f卑微小嘉：来点绿植
-[00:36:42] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f夜难熬.：噢噢
-[00:36:42] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f⁺✞ʚ蜂乐回重度依赖ɞ✟₊点了9个赞
-[00:36:43] [Server thread/INFO] (DyDanmaku) [DyDanmaku]已经断开直播间连接
-[00:36:43] [Render thread/INFO] (Minecraft) [CHAT] [DyDanmaku]已经断开直播间连接
-[00:36:44] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[00:36:44] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[test]'/minecraft:overworld
-[00:36:44] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[test]'/minecraft:the_end
-[00:36:44] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[test]'/minecraft:the_nether
-[00:36:45] [Server thread/INFO] (Minecraft) Player352 lost connection: Disconnected
-[00:36:45] [Server thread/INFO] (Minecraft) Player352 left the game
-[00:36:45] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[00:36:45] [Server thread/INFO] (Minecraft) Stopping server
-[00:36:45] [Server thread/INFO] (Minecraft) Saving players
-[00:36:45] [Server thread/INFO] (Minecraft) Saving worlds
-[00:36:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[test]'/minecraft:overworld
-[00:36:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[test]'/minecraft:the_end
-[00:36:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[test]'/minecraft:the_nether
-[00:36:46] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (test): All chunks are saved
-[00:36:46] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[00:36:46] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[00:36:46] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[00:36:47] [Render thread/INFO] (Minecraft) Stopping!
+[19:19:58] [Render thread/INFO] (Minecraft) Reloading ResourceManager: Default, Fabric Mods (Fabric Particles (v1), Fabric API Lookup API (v1), Fabric Item API (v1), Fabric Data Generation API (v1), Fabric Textures (v0), Fabric Game Rule API (v1), Fabric Resource Conditions API (v1), Fabric Transfer API (v1), Fabric BlockRenderLayer Registration (v1), Fabric Message API (v1), Fabric API Base, Fabric Screen API (v1), Fabric Models (v0), Fabric Resource Loader (v0), Fabric Key Binding API (v1), Fabric Networking API (v1), Fabric Renderer - Indigo, Fabric Loader, Fabric Biome API (v1), DyDanmaku, Fabric Command API (v2), Fabric Screen Handler API (v1), Fabric Rendering (v1), Fabric Renderer API (v1), Fabric Transitive Access Wideners (v1), Fabric Content Registries (v0), Fabric Rendering Data Attachment (v1), Fabric Mining Level API (v1), Fabric Convention Tags, Fabric Dimensions API (v1), Fabric Rendering Fluids (v1), Fabric Loot API (v2), Fabric Entity Events (v1), Fabric Lifecycle Events (v1), Fabric Object Builder API (v1), Fabric Events Interaction (v0), Fabric API, Fabric Item Groups (v0), Fabric Game Test API (v1), Fabric Crash Report Info (v1), Fabric Registry Sync (v0))
+[19:19:59] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
+[19:20:00] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[19:20:00] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[19:20:01] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
+[19:20:01] [Render thread/INFO] (Minecraft) Sound engine started
+[19:20:01] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[19:20:01] [Render thread/INFO] (Minecraft) Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
+[19:20:01] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[19:20:01] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[19:20:01] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[19:20:01] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[19:20:01] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[19:20:01] [Worker-Bootstrap-5/INFO] (Minecraft) 4256 Datafixer optimizations took 16655 milliseconds
+[19:20:02] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[19:20:02] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[19:20:02] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[19:20:02] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[19:22:22] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[19:22:22] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
+[19:22:28] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 1.728 ms
+[19:22:28] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19
+[19:22:28] [Server thread/INFO] (Minecraft) Generating keypair
+[19:22:36] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[19:22:37] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[19:22:37] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[19:22:37] [Render thread/INFO] (Minecraft) Preparing spawn area: 1%
+[19:22:38] [Render thread/INFO] (Minecraft) Preparing spawn area: 2%
+[19:22:39] [Render thread/INFO] (Minecraft) Preparing spawn area: 4%
+[19:22:39] [Render thread/INFO] (Minecraft) Preparing spawn area: 7%
+[19:22:40] [Render thread/INFO] (Minecraft) Preparing spawn area: 8%
+[19:22:40] [Render thread/INFO] (Minecraft) Preparing spawn area: 8%
+[19:22:41] [Render thread/INFO] (Minecraft) Preparing spawn area: 11%
+[19:22:41] [Render thread/INFO] (Minecraft) Preparing spawn area: 15%
+[19:22:41] [Render thread/INFO] (Minecraft) Preparing spawn area: 19%
+[19:22:42] [Render thread/INFO] (Minecraft) Preparing spawn area: 23%
+[19:22:43] [Render thread/INFO] (Minecraft) Preparing spawn area: 30%
+[19:22:43] [Render thread/INFO] (Minecraft) Preparing spawn area: 34%
+[19:22:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 39%
+[19:22:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 43%
+[19:22:45] [Render thread/INFO] (Minecraft) Preparing spawn area: 49%
+[19:22:45] [Render thread/INFO] (Minecraft) Preparing spawn area: 55%
+[19:22:46] [Render thread/INFO] (Minecraft) Preparing spawn area: 60%
+[19:22:46] [Render thread/INFO] (Minecraft) Preparing spawn area: 67%
+[19:22:47] [Render thread/INFO] (Minecraft) Preparing spawn area: 71%
+[19:22:47] [Render thread/INFO] (Minecraft) Preparing spawn area: 77%
+[19:22:47] [Render thread/INFO] (Minecraft) Preparing spawn area: 83%
+[19:22:48] [Render thread/INFO] (Minecraft) Preparing spawn area: 87%
+[19:22:49] [Render thread/INFO] (Minecraft) Preparing spawn area: 93%
+[19:22:49] [Render thread/INFO] (Minecraft) Time elapsed: 12487 ms
+[19:22:49] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[19:22:49] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[19:22:50] [Server thread/INFO] (Minecraft) Player388[local:E:fc7fd876] logged in with entity id 360 at (-1.5, 76.0, -2.5)
+[19:22:50] [Server thread/INFO] (Minecraft) Player388 joined the game
+[19:22:52] [Render thread/INFO] (Minecraft) Loaded 0 advancements
+[19:23:00] [Server thread/INFO] (DyDanmaku) [DyDanmaku]已经连接到房间号：485090914826
+[19:23:00] [Render thread/INFO] (Minecraft) [CHAT] [DyDanmaku]已经连接到房间号：485090914826
+[19:23:00] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 已连接至直播间
+[19:23:01] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f童年的的过去送出了送你花花x1
+[19:23:01] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§fStars送出了粉丝团灯牌
+[19:23:01] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§fFazm送出了人气票x1
+[19:23:01] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f希彬送出了粉丝团灯牌
+[19:23:01] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f睡觉💤送出了粉丝团灯牌
+[19:23:01] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f柚见佳楠.（西柚）（1.24生日版）送出了粉丝团灯牌
+[19:23:01] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§fFazm送出了人气票x1
+[19:23:01] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f遇见喵来为何不拜：你们
+[19:23:01] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f剑语墨尘点了1个赞
+[19:23:01] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f啥玩扔送出了粉丝团灯牌
+[19:23:02] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f欢欢👑：佳楠今天还玩终焉决斗场吗
+[19:23:02] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f空送出了点亮粉丝团x1
+[19:23:02] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f麻瓜中单送出了粉丝团灯牌
+[19:23:02] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f放假吧点了8个赞
+[19:23:02] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f时迁点了8个赞
+[19:23:03] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f爨飝送出了粉丝团灯牌
+[19:23:03] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f云澈点了10个赞
+[19:23:04] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f233啊啊压点了11个赞
+[19:23:04] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f五仁月饼点了1个赞
+[19:23:04] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f朽木送出了粉丝团灯牌
+[19:23:04] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f@☁️云游.送出了粉丝团灯牌
+[19:23:05] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f南城@旧梦送出了大啤酒x1
+[19:23:05] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f空送出了点亮粉丝团x1
+[19:23:05] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f剑语墨尘点了16个赞
+[19:23:06] [Render thread/INFO] (Minecraft) [CHAT] §6[粉丝团]§f
+[19:23:06] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f用户2409071406530点了6个赞
+[19:23:06] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f十一不是11送出了粉丝团灯牌
+[19:23:06] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f时迁点了9个赞
+[19:23:07] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f南城@旧梦送出了大啤酒x2
+[19:23:07] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f一只龙送出了鲜花x1
+[19:23:07] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§flwm点了3个赞
+[19:23:08] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f233啊啊压点了10个赞
+[19:23:08] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f王斯桐送出了点亮粉丝团x1
+[19:23:08] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f万寿送出了点亮粉丝团x1
+[19:23:08] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f魉点了7个赞
+[19:23:09] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f海棠花未眠点了9个赞
+[19:23:09] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f格 局ꦿ๑҉送出了粉丝团灯牌
+[19:23:09] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§flwm点了10个赞
+[19:23:09] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f南城@旧梦送出了大啤酒x2
+[19:23:10] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f一只龙送出了鲜花x1
+[19:23:10] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§fKikuru：看看小a的接力视频
+[19:23:10] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f行秋：可以点歌嘛[微笑]
+[19:23:10] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f魉点了6个赞
+[19:23:10] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§fฅ˙Ⱉ˙ฅ送出了粉丝团灯牌
+[19:23:10] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f温柔知可意送出了粉丝团灯牌
+[19:23:11] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f迪：😹😹😹😹😹😹😹😹😹😹😹😹😹😹😹😹😹😹😹
+[19:23:11] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f王斯桐送出了点亮粉丝团x1
+[19:23:11] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f万寿送出了点亮粉丝团x1
+[19:23:11] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f万寿送出了粉丝团灯牌
+[19:23:11] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f云澈点了8个赞
+[19:23:11] [Render thread/INFO] (Minecraft) [CHAT] §b[消息]§f梦索：今天玩什么嘞
+[19:23:11] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f夜辰送出了粉丝团灯牌
+[19:23:12] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f@☁️云游.送出了为你闪耀x1
+[19:23:12] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f鬼魅。，，点了9个赞
+[19:23:12] [Render thread/INFO] (Minecraft) [CHAT] §d[点赞]§f豆包暗香点了10个赞
+[19:23:12] [Render thread/INFO] (Minecraft) [CHAT] §a[礼物]§f老五废品生活送出了大啤酒x1
+[19:23:13] [Server thread/INFO] (DyDanmaku) 已断开直播间连接
+[19:23:13] [Server thread/INFO] (DyDanmaku) [DyDanmaku]已经断开直播间连接
+[19:23:13] [Render thread/INFO] (Minecraft) [CHAT] [DyDanmaku]已经断开直播间连接
+[19:23:13] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 已断开直播间连接
+[19:23:17] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[19:23:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[19:23:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[19:23:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[19:23:17] [Server thread/INFO] (Minecraft) Player388 lost connection: Disconnected
+[19:23:17] [Server thread/INFO] (Minecraft) Player388 left the game
+[19:23:17] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[19:23:17] [Server thread/INFO] (Minecraft) Stopping server
+[19:23:17] [Server thread/INFO] (Minecraft) Saving players
+[19:23:17] [Server thread/INFO] (Minecraft) Saving worlds
+[19:23:18] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[19:23:18] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[19:23:18] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[19:23:18] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World (1)): All chunks are saved
+[19:23:18] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[19:23:18] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[19:23:18] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[19:23:19] [Render thread/INFO] (Minecraft) Stopping!
