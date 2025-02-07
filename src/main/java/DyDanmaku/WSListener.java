@@ -12,6 +12,8 @@ import okio.ByteString;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.zip.GZIPInputStream;
 
 import static top.tiangalon.dydanmaku.DyDanmaku.LOGGER;
@@ -21,23 +23,36 @@ public class WSListener extends WebSocketListener{
 
     private ServerCommandSource source = null;
     public boolean isConnected = false;
+    private Long LogId = 0L;
+    private com.google.protobuf.ByteString Payload = null;
+    private WebSocket webSocket = null;
 
     @Override
     public void onOpen(WebSocket webSocket, Response response){
+        this.webSocket = webSocket;
         LOGGER.info("已连接至直播间");
         isConnected = true;
+        Timer AckTimer = new Timer();
+        AckTimer.schedule(new AckTimerTask(), 1000, 5000);
     }
 
     @Override
     public void onClosed(WebSocket webSocket, int code, String reason) {
         super.onClosed(webSocket, code, reason);
         isConnected = false;
-        LOGGER.info("已断开直播间连接");
+        LOGGER.info("[DuDanmaku]已断开直播间连接,原因：" + reason);
+        MsgOutput("[DuDanmaku]已断开直播间连接,原因：" + reason);
     }
 
     @Override
     public void onFailure(WebSocket webSocket, Throwable t, Response response){
-        this.onClosed(webSocket, 1000, "error");
+        String reason = null;
+        if (t.getMessage() == null) {
+            reason = "网络连接失败";
+        } else {
+            reason = t.getMessage();
+        }
+        this.onClosed(webSocket, 1000, reason);
     }
 
     @Override
@@ -47,6 +62,7 @@ public class WSListener extends WebSocketListener{
             LOGGER.info("收到空消息");
         } else {
             Douyin.PushFrame MsgFrame = null;
+
             try {
                 MsgFrame = new Douyin.PushFrame().parseFrom(bytesArray);
             } catch (InvalidProtocolBufferException e) {
@@ -58,18 +74,9 @@ public class WSListener extends WebSocketListener{
             try {
                 Msg = Douyin.Response.parseFrom(uncompressedBytes);
                 //JsonMsg = JsonFormat.printer().print(Msg);
-
-                //发送ack
-                if (Msg.getNeedAck() == true){
-                    Douyin.PushFrame AckFrame = Douyin.PushFrame.newBuilder()
-                            .setLogId(MsgFrame.getLogId())
-                            .setPayloadType("ack")
-                            .setPayload(Msg.getInternalExtBytes())
-                            .build();
-                    byte[] AckMsg = AckFrame.toByteArray();
-                    ByteString AckByteString = ByteString.of(AckMsg);
-                    webSocket.send(AckByteString);
-                    //System.out.println("已发送ack");
+                if(LogId == 0L || Payload == null){
+                    LogId = MsgFrame.getLogId();
+                    Payload = Msg.getInternalExtBytes();
                 }
 
                 for (Douyin.Message SingleMsg : Msg.getMessagesListList()){
@@ -162,6 +169,26 @@ public class WSListener extends WebSocketListener{
         } else {
             source.getPlayer().sendMessage(Text.literal("[DyDanmaku]弹幕输出失败，未获取游戏源"));
         }
+    }
+
+    class AckTimerTask extends TimerTask {
+        public void run() {
+            sendAck(webSocket);
+        }
+    }
+
+    public void sendAck(WebSocket webSocket) {
+        if (LogId == 0L || Payload == null) {
+            return;
+        }
+        Douyin.PushFrame AckFrame = Douyin.PushFrame.newBuilder()
+                .setLogId(LogId)
+                .setPayloadType("ack")
+                .setPayload(Payload)
+                .build();
+        byte[] AckMsg = AckFrame.toByteArray();
+        ByteString AckByteString = ByteString.of(AckMsg);
+        webSocket.send(AckByteString);
     }
 
 }

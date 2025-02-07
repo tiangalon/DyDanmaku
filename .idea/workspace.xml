@@ -5,13 +5,24 @@
   </component>
   <component name="AutomaticModuleUnloader">
     <loaded-modules>
+      <module name="DyDanmaku-fabric-1.19.x.client" />
+      <module name="DyDanmaku-fabric-1.19.x.test" />
+      <module name="DyDanmaku-fabric-1.19.x" />
+      <module name="DyDanmaku-fabric-1.19.x.main" />
       <module name="DyDanmaku" />
       <module name="DyDanmaku.main" />
       <module name="DyDanmaku.test" />
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89628a13-f1b0-4eba-8db7-4b08678c6437" name="更改" comment="修复连接问题" />
+    <list default="true" id="89628a13-f1b0-4eba-8db7-4b08678c6437" name="更改" comment="修改心跳包发送逻辑，优化断连问题">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Client.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Client.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_7_23_12_52____.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/_2024_7_23_12_52____.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DyDanmaku/WSListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DyDanmaku/WSListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DyDanmaku/WebSocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DyDanmaku/WebSocketClient.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,11 +52,23 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="DyDanmaku" type="f1a62948:ProjectNode" />
-                <item name="运行配置" type="7b0102dc:RunConfigurationsNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DyDanmaku-fabric-1.19.x" type="f1a62948:ProjectNode" />
+                <item name="DyDanmaku" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DyDanmaku" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DyDanmaku" type="f1a62948:ProjectNode" />
+                <item name="运行配置" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -369,6 +392,7 @@
     <MESSAGE value="更新readme" />
     <MESSAGE value="更正1.21-fabric版本号为1.21&amp;1.21.1-fabric" />
     <MESSAGE value="修复连接问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复连接问题" />
+    <MESSAGE value="修改心跳包发送逻辑，优化断连问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改心跳包发送逻辑，优化断连问题" />
   </component>
 </project>
