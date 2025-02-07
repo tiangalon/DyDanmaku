@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.client.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.client.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.main.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.main.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.test.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.test.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku.main.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku.test.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku.test.iml" />
