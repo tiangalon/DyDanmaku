@@ -8,6 +8,7 @@ import okhttp3.WebSocket;
 import java.io.*;
 import java.net.URL;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static top.tiangalon.dydanmaku.DyDanmaku.*;
 
@@ -75,7 +76,11 @@ public class WebSocketClient {
                 "heartbeatDuration=0&" +
                 "signature=" + signature;
 
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .writeTimeout(0, TimeUnit.SECONDS)
+                .readTimeout(0, TimeUnit.SECONDS)
+                .connectTimeout(0, TimeUnit.SECONDS)
+                .build();
         Request request = new Request.Builder()
             .url(wss_url)
             .header("User-Agent", useragent)

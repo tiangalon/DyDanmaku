@@ -1,6 +1,6 @@
-[20:29:58] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.15.11
-[20:29:58] [main/INFO] (FabricLoader) Loading 59 mods:
-	- dydanmaku 0.1.2
+[22:43:17] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.15.11
+[22:43:17] [main/INFO] (FabricLoader) Loading 59 mods:
+	- dydanmaku 0.1.3
 	- fabric-api 0.92.2+1.20.1
 	- fabric-api-base 0.4.31+1802ada577
 	- fabric-api-lookup-api-v1 1.6.36+1802ada577
@@ -59,15 +59,14 @@
 	- java 22
 	- minecraft 1.20.1
 	- mixinextras 0.3.5
-[20:29:58] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/tao/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
-[20:29:58] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[20:29:58] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
-[20:29:58] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[20:29:59] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
-[20:30:03] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 91 milliseconds
-[20:30:04] [Render thread/INFO] (Minecraft) [STDERR]: [LWJGL] [ThreadLocalUtil] Unsupported JNI version detected, this may result in a crash. Please inform LWJGL developers.
-[20:30:04] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[20:30:05] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+[22:43:17] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/tao/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
+[22:43:17] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[22:43:17] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[22:43:18] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
+[22:43:22] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 91 milliseconds
+[22:43:23] [Render thread/INFO] (Minecraft) [STDERR]: [LWJGL] [ThreadLocalUtil] Unsupported JNI version detected, this may result in a crash. Please inform LWJGL developers.
+[22:43:24] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[22:43:24] [Render thread/ERROR] (Minecraft) Failed to verify authentication
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:156) ~[authlib-4.0.43.jar:?]
@@ -85,118 +84,179 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-4.0.43.jar:?]
 	... 9 more
-[20:30:05] [Render thread/INFO] (Minecraft) Setting user: Player696
-[20:30:05] [Render thread/INFO] (DyDanmaku) DyDanmaku initialized
-[20:30:05] [Render thread/INFO] (DyDanmaku) [DyDanmaku]DyDanmaku is Running in IDE
-[20:30:05] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[20:30:06] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.2-snapshot
-[20:30:07] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-keybindings-v0, fabric-renderer-api-v1, fabric-events-interaction-v0, fabric-rendering-fluids-v1, fabric-biome-api-v1, fabric-commands-v0, fabricloader, fabric-resource-conditions-api-v1, fabric-renderer-registries-v1, fabric-item-group-api-v1, fabric-loot-api-v2, dydanmaku, fabric-sound-api-v1, fabric-api-lookup-api-v1, fabric-transitive-access-wideners-v1, fabric-particles-v1, fabric-rendering-v1, fabric-block-view-api-v2, fabric-crash-report-info-v1, fabric-data-generation-api-v1, fabric-object-builder-api-v1, fabric-recipe-api-v1, fabric-rendering-v0, fabric-message-api-v1, fabric-command-api-v1, fabric-dimensions-v1, fabric-lifecycle-events-v1, fabric-convention-tags-v1, fabric-renderer-indigo, fabric-key-binding-api-v1, fabric-entity-events-v1, fabric-resource-loader-v0, fabric-game-rule-api-v1, fabric-item-api-v1, fabric-mining-level-api-v1, fabric-rendering-data-attachment-v1, fabric-screen-api-v1, fabric-content-registries-v0, fabric-block-api-v1, fabric-containers-v0, fabric-models-v0, fabric-events-lifecycle-v0, fabric-networking-v0, fabric-gametest-api-v1, fabric-blockrenderlayer-v1, fabric-transfer-api-v1, fabric-screen-handler-api-v1, fabric-loot-tables-v1, fabric-registry-sync-v0, fabric-command-api-v2, fabric-networking-api-v1, fabric-client-tags-api-v1, fabric-api-base, fabric-api, fabric-model-loading-api-v1, fabric-data-attachment-api-v1)
-[20:30:07] [Worker-Main-12/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
-[20:30:08] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
-[20:30:08] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[20:30:08] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[20:30:08] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
-[20:30:08] [Render thread/INFO] (Minecraft) Sound engine started
-[20:30:08] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[20:30:08] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[20:30:08] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[20:30:08] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[20:30:08] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[20:30:08] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[20:30:08] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[20:30:08] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[20:30:08] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[20:30:08] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[20:30:09] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[20:30:09] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[20:30:09] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[20:30:26] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[20:30:26] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
-[20:30:26] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 1.643 ms
-[20:30:26] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
-[20:30:26] [Server thread/INFO] (Minecraft) Generating keypair
-[20:30:27] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[20:30:28] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[20:30:28] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[20:30:28] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[20:30:28] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[20:30:29] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[20:30:29] [Render thread/INFO] (Minecraft) Preparing spawn area: 92%
-[20:30:29] [Render thread/INFO] (Minecraft) Time elapsed: 2545 ms
-[20:30:29] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[20:30:29] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[20:30:30] [Server thread/INFO] (Minecraft) Player696[local:E:3d86a716] logged in with entity id 157 at (-42.65739299450931, 68.0, -360.33396073577586)
-[20:30:30] [Server thread/INFO] (Minecraft) Player696 joined the game
-[20:30:31] [Render thread/INFO] (Minecraft) Loaded 3 advancements
-[20:30:31] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[20:30:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[20:30:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[20:30:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[20:30:49] [Server thread/INFO] (DyDanmaku) [DyDanmaku]已经连接到房间号：485090914826
-[20:30:49] [Render thread/INFO] (Minecraft) [System] [CHAT] [DyDanmaku]已经连接到房间号：485090914826
-[20:30:49] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 已连接至直播间
-[20:30:50] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f龞送出了入团卡x1
-[20:30:50] [Render thread/INFO] (Minecraft) [System] [CHAT] §6[粉丝团]§f恭喜 龞 成为第139883名佳里人成员
-[20:30:51] [Render thread/INFO] (Minecraft) [System] [CHAT] §b[消息]§f不知道取啥名：合金你有很多
-[20:30:51] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f7777点了3个赞
-[20:30:51] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f我的世界送出了点亮粉丝团x1
-[20:30:53] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f龞送出了入团卡x1
-[20:30:53] [Render thread/INFO] (Minecraft) [System] [CHAT] §b[消息]§f^玫瑰^：佳楠，眼熟我
-[20:30:54] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f我的世界送出了点亮粉丝团x1
-[20:30:54] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f刘宝点了45个赞
-[20:30:55] [Render thread/INFO] (Minecraft) [System] [CHAT] §b[消息]§f一般般：六百六十六军师盐都不盐了
-[20:30:55] [Render thread/INFO] (Minecraft) [System] [CHAT] §b[消息]§f楠神.：背包
-[20:30:58] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f守约点了24个赞
-[20:30:59] [Render thread/INFO] (Minecraft) [System] [CHAT] §b[消息]§f_.D._：我是你粉丝，我也是我的世界老玩家
-[20:31:00] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f刘宝点了36个赞
-[20:31:01] [Render thread/INFO] (Minecraft) [System] [CHAT] §b[消息]§f虞洛：手滑了
-[20:31:01] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f宁愿送出了入团卡x1
-[20:31:01] [Render thread/INFO] (Minecraft) [System] [CHAT] §6[粉丝团]§f恭喜 宁愿 成为第139884名佳里人成员
-[20:31:01] [Server thread/INFO] (DyDanmaku) 已断开直播间连接
-[20:31:01] [Server thread/INFO] (DyDanmaku) [DyDanmaku]已经断开直播间连接
-[20:31:01] [Render thread/INFO] (Minecraft) [System] [CHAT] [DyDanmaku]已经断开直播间连接
-[20:31:01] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 已断开直播间连接
-[20:31:06] [Server thread/INFO] (DyDanmaku) [DyDanmaku]已经连接到房间号：485090914826
-[20:31:06] [Render thread/INFO] (Minecraft) [System] [CHAT] [DyDanmaku]已经连接到房间号：485090914826
-[20:31:06] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 已连接至直播间
-[20:31:06] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f宁愿送出了入团卡x1
-[20:31:07] [Render thread/INFO] (Minecraft) [System] [CHAT] §b[消息]§f用户6736653331686：主播的基本操作(基操)
-[20:31:10] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f守约点了21个赞
-[20:31:12] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f刘宝点了12个赞
-[20:31:16] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f墨染樱送出了粉丝团灯牌
-[20:31:16] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§fこ不懂爱❤️点了33个赞
-[20:31:18] [Render thread/INFO] (Minecraft) [System] [CHAT] §b[消息]§f虞洛：刚才不小心长按错人了
-[20:31:18] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f刘宝点了9个赞
-[20:31:19] [Render thread/INFO] (Minecraft) [System] [CHAT] §b[消息]§f用户2580797317606：今晚的最后看一会儿
-[20:31:22] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f程程度点了3个赞
-[20:31:22] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f宁愿送出了粉丝团灯牌
-[20:31:24] [Render thread/INFO] (Minecraft) [System] [CHAT] §b[消息]§f我拿的筷子加水泥350条塞你们走了你：啊，加嘛？
-[20:31:24] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f刘秉烨点了27个赞
-[20:31:24] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f萩۹(๑•̀ω•́๑)۶送出了小心心x1
-[20:31:25] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f_twet送出了小心心x1
-[20:31:25] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f萩۹(๑•̀ω•́๑)۶送出了小心心x2
-[20:31:26] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f萩۹(๑•̀ω•́๑)۶送出了小心心x3
-[20:31:26] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f_twet送出了小心心x2
-[20:31:26] [Render thread/INFO] (Minecraft) [System] [CHAT] §a[礼物]§f萩۹(๑•̀ω•́๑)۶送出了小心心x5
-[20:31:27] [Server thread/INFO] (DyDanmaku) 已断开直播间连接
-[20:31:27] [Server thread/INFO] (DyDanmaku) [DyDanmaku]已经断开直播间连接
-[20:31:27] [Render thread/INFO] (Minecraft) [System] [CHAT] [DyDanmaku]已经断开直播间连接
-[20:31:27] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 已断开直播间连接
-[20:31:32] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[20:31:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[20:31:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[20:31:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[20:31:32] [Server thread/INFO] (Minecraft) Player696 lost connection: Disconnected
-[20:31:32] [Server thread/INFO] (Minecraft) Player696 left the game
-[20:31:32] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[20:31:32] [Server thread/INFO] (Minecraft) Stopping server
-[20:31:32] [Server thread/INFO] (Minecraft) Saving players
-[20:31:32] [Server thread/INFO] (Minecraft) Saving worlds
-[20:31:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[20:31:33] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[20:31:33] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[20:31:33] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World): All chunks are saved
-[20:31:33] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[20:31:33] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[20:31:33] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[20:31:33] [Render thread/INFO] (Minecraft) Stopping!
+[22:43:24] [Render thread/INFO] (Minecraft) Setting user: Player855
+[22:43:24] [Render thread/INFO] (DyDanmaku) DyDanmaku initialized
+[22:43:24] [Render thread/INFO] (DyDanmaku) [DyDanmaku]DyDanmaku is Running in IDE
+[22:43:25] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[22:43:25] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.2-snapshot
+[22:43:26] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-data-attachment-api-v1, fabric-transfer-api-v1, fabric-loot-tables-v1, fabric-rendering-fluids-v1, fabric-block-api-v1, fabric-api, fabric-loot-api-v2, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-commands-v0, fabric-rendering-data-attachment-v1, fabric-item-api-v1, fabric-lifecycle-events-v1, fabric-gametest-api-v1, fabric-renderer-api-v1, fabric-recipe-api-v1, fabric-message-api-v1, fabric-registry-sync-v0, fabric-rendering-v0, fabric-data-generation-api-v1, fabric-containers-v0, fabric-crash-report-info-v1, fabric-events-lifecycle-v0, fabric-game-rule-api-v1, fabric-renderer-registries-v1, fabric-networking-api-v1, fabric-block-view-api-v2, fabric-models-v0, fabric-convention-tags-v1, fabric-command-api-v1, fabric-object-builder-api-v1, fabric-item-group-api-v1, dydanmaku, fabric-keybindings-v0, fabric-transitive-access-wideners-v1, fabric-mining-level-api-v1, fabric-api-lookup-api-v1, fabric-screen-api-v1, fabric-model-loading-api-v1, fabric-entity-events-v1, fabric-sound-api-v1, fabricloader, fabric-resource-loader-v0, fabric-client-tags-api-v1, fabric-api-base, fabric-blockrenderlayer-v1, fabric-screen-handler-api-v1, fabric-key-binding-api-v1, fabric-renderer-indigo, fabric-biome-api-v1, fabric-networking-v0, fabric-content-registries-v0, fabric-dimensions-v1, fabric-command-api-v2, fabric-events-interaction-v0, fabric-particles-v1)
+[22:43:26] [Worker-Main-11/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
+[22:43:27] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
+[22:43:27] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[22:43:27] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[22:43:27] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
+[22:43:27] [Render thread/INFO] (Minecraft) Sound engine started
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[22:43:27] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[22:43:27] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[22:43:36] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[22:43:36] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
+[22:43:36] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 1.219 ms
+[22:43:36] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
+[22:43:36] [Server thread/INFO] (Minecraft) Generating keypair
+[22:43:37] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[22:43:38] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[22:43:38] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[22:43:38] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[22:43:38] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[22:43:39] [Render thread/INFO] (Minecraft) Preparing spawn area: 97%
+[22:43:39] [Render thread/INFO] (Minecraft) Time elapsed: 2077 ms
+[22:43:39] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[22:43:39] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[22:43:40] [Server thread/INFO] (Minecraft) Player855[local:E:39aacf9d] logged in with entity id 151 at (-8.940972429010696, 69.0, -353.581235333009)
+[22:43:40] [Server thread/INFO] (Minecraft) Player855 joined the game
+[22:43:40] [Render thread/INFO] (Minecraft) Loaded 3 advancements
+[22:43:49] [Server thread/INFO] (DyDanmaku) [DyDanmaku]已经连接到房间号：926018421928
+[22:43:49] [Render thread/INFO] (Minecraft) [System] [CHAT] [DyDanmaku]已经连接到房间号：926018421928
+[22:43:49] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 已连接至直播间
+[22:43:49] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：606 bytes
+[22:43:50] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：544 bytes
+[22:43:50] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:43:55] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:00] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:05] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:10] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:15] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:20] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:24] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[22:44:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[22:44:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[22:44:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[22:44:25] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:30] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:35] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:40] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:45] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:50] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:55] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：605 bytes
+[22:44:55] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:44:56] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：539 bytes
+[22:44:57] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：603 bytes
+[22:44:58] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：605 bytes
+[22:45:00] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:04] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：605 bytes
+[22:45:05] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:10] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:15] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:17] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[22:45:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[22:45:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[22:45:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[22:45:20] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:25] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:26] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：605 bytes
+[22:45:30] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:35] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:40] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:45] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:50] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:55] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:45:56] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：603 bytes
+[22:46:00] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:46:01] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：605 bytes
+[22:46:02] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：539 bytes
+[22:46:03] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：603 bytes
+[22:46:04] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：603 bytes
+[22:46:05] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：1166 bytes
+[22:46:05] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:46:08] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：881 bytes
+[22:46:08] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[22:46:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[22:46:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[22:46:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[22:46:08] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：805 bytes
+[22:46:10] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：608 bytes
+[22:46:10] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：540 bytes
+[22:46:10] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:46:12] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：612 bytes
+[22:46:13] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：612 bytes
+[22:46:15] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:46:19] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：608 bytes
+[22:46:20] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:46:25] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:46:30] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:46:35] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:46:40] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：608 bytes
+[22:46:40] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:46:45] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:46:50] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:46:55] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:00] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:05] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:10] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：612 bytes
+[22:47:10] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:13] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：605 bytes
+[22:47:14] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：540 bytes
+[22:47:15] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：605 bytes
+[22:47:15] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:16] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：605 bytes
+[22:47:20] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:22] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：1187 bytes
+[22:47:22] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：605 bytes
+[22:47:25] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:30] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：878 bytes
+[22:47:30] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：1122 bytes
+[22:47:30] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:31] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：606 bytes
+[22:47:32] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：540 bytes
+[22:47:33] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：611 bytes
+[22:47:34] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：606 bytes
+[22:47:35] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:38] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[22:47:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[22:47:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[22:47:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[22:47:40] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：611 bytes
+[22:47:40] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:45] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:50] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:53] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：1187 bytes
+[22:47:54] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：912 bytes
+[22:47:54] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：842 bytes
+[22:47:55] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:47:56] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：909 bytes
+[22:47:57] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：1309 bytes
+[22:47:57] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f天嘎胧tiangalon点了2个赞
+[22:47:57] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f天嘎胧tiangalon点了3个赞
+[22:47:57] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：912 bytes
+[22:48:00] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:48:01] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：1214 bytes
+[22:48:01] [Render thread/INFO] (Minecraft) [System] [CHAT] §d[点赞]§f天嘎胧tiangalon点了4个赞
+[22:48:01] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：917 bytes
+[22:48:02] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[22:48:02] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[22:48:02] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[22:48:02] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[22:48:02] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：835 bytes
+[22:48:03] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：917 bytes
+[22:48:04] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：917 bytes
+[22:48:05] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:48:07] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[22:48:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[22:48:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[22:48:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[22:48:07] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：612 bytes
+[22:48:08] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：540 bytes
+[22:48:09] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：611 bytes
+[22:48:10] [Timer-1/INFO] (DyDanmaku) 已发送ack
+[22:48:10] [OkHttp https://webcast5-ws-web-hl.douyin.com/.../INFO] (DyDanmaku) 收到消息：611 bytes
