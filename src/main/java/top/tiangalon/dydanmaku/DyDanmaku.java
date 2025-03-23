@@ -14,16 +14,19 @@ import DyDanmaku.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
+import java.util.function.Supplier;
 
-import static DyDanmaku.WebSocketClient.getSignFile;
+import static DyDanmaku.WebSocketClientNetty.getSignFile;
 
 
 public class DyDanmaku implements ModInitializer {
     public static final String MOD_ID = "DyDanmaku";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    public static WebSocketClient websocket = new WebSocketClient();
+    public WebSocketClientNetty websocket = new WebSocketClientNetty();
+    public static Map<String, String> params = null;
+    String live_id = null;
 
-    public static String DyDanmakuPath = WebSocketClient.getPath();
+    public static String DyDanmakuPath = WebSocketClientNetty.getPath();
     public static String ConfigDirPath = DyDanmakuPath.substring(0, DyDanmakuPath.lastIndexOf("/")) + "/config/DyDanmaku";
 
     public ServerCommandSource gameSource;
@@ -46,8 +49,8 @@ public class DyDanmaku implements ModInitializer {
                                         LOGGER.info("[DyDanmaku]已经连接到房间，无法重复连接");
                                         return Command.SINGLE_SUCCESS;
                                     }
-                                    String live_id = StringArgumentType.getString(context, "live_id");
-                                    Map<String, String> params = DyDanmakuRequest.getParams(live_id);
+                                    live_id = StringArgumentType.getString(context, "live_id");
+                                    params = DyDanmakuRequest.getParams(live_id);
                                     //LOGGER.info("[DyDanmaku]直播间参数： " + params);
                                     if (params == null) {
                                         context.getSource().sendFeedback(() -> Text.literal("[DyDanmaku]无法获取房间号：" + live_id + " 的参数,请检查网络环境或房间号是否正确"), false);
@@ -59,13 +62,14 @@ public class DyDanmaku implements ModInitializer {
                                         }
                                         else {
                                             try {
-                                                websocket.connect(params, context.getSource());
+                                                websocket.init(params, context.getSource());
+                                                websocket.run();
                                             } catch (Exception e) {
                                                 LOGGER.info("[DyDanmaku]无法连接房间：" + live_id, e);
                                                 context.getSource().getPlayer().sendMessage(Text.literal("[DyDanmaku]无法连接房间：" + live_id));
                                                 throw new RuntimeException(e);
                                             }
-                                            context.getSource().getPlayer().sendMessage(Text.literal("[DyDanmaku]已经连接到房间号：" + live_id));
+                                            websocket.LiveStatusOutput();
                                             LOGGER.info("[DyDanmaku]已经连接到房间号：" + live_id);
                                         }
                                     }
@@ -80,11 +84,29 @@ public class DyDanmaku implements ModInitializer {
                                     LOGGER.info("[DyDanmaku]尚未连接到房间，无法断开连接");
                                     return Command.SINGLE_SUCCESS;
                                 }else{
-                                    websocket.close();
+                                    try {
+                                        websocket.close();
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                        context.getSource().getPlayer().sendMessage(Text.literal("[DyDanmaku]断开直播间连接失败"));
+                                        LOGGER.info("[DyDanmaku]断开直播间连接失败");
+                                        return Command.SINGLE_SUCCESS;
+                                    }
                                     context.getSource().getPlayer().sendMessage(Text.literal("[DyDanmaku]已经断开直播间连接"));
                                     LOGGER.info("[DyDanmaku]已经断开直播间连接");
                                     return Command.SINGLE_SUCCESS;
                                 }
+                            })
+                    )
+                    .then(CommandManager.literal("status")
+                            .executes(context -> {
+                                if (!websocket.isConnected()) {
+                                    context.getSource().sendFeedback(() -> Text.literal("[DyDanmaku]尚未连接到房间，无法获取状态"), false);
+                                    LOGGER.info("[DyDanmaku]尚未连接到房间，无法获取状态");
+                                    return Command.SINGLE_SUCCESS;
+                                }
+                                websocket.LiveStatusOutput();
+                                return Command.SINGLE_SUCCESS;
                             })
                     )
             );
@@ -92,7 +114,7 @@ public class DyDanmaku implements ModInitializer {
     }
 
     public static boolean isRunInJar() {
-        String runType = String.valueOf(WebSocketClient.class.getResource("WebSocketClient.class"));
+        String runType = String.valueOf(WebSocketClientNetty.class.getResource("WebSocketClientNetty.class"));
         return runType != null && runType.startsWith("jar:");
     }
 

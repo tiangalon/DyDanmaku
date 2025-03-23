@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.client.iml" filepath="$PROJECT_DIR$/.idea/modules/DyDanmaku-fabric-1.19.x.client.iml" />
