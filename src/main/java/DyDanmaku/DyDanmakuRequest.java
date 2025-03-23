@@ -19,9 +19,9 @@ import static top.tiangalon.dydanmaku.DyDanmaku.LOGGER;
 
 public class DyDanmakuRequest {
 
-     RequestConfig defaultConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
+    RequestConfig defaultConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
 
-     public static String User_Agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
+    public static String User_Agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 
     /**
      *  获取抖音ttwid
@@ -40,6 +40,7 @@ public class DyDanmakuRequest {
         String avatar = null;
         Map<String, String> params = new HashMap<String, String>();
         CloseableHttpClient httpClient = HttpClients.createDefault();
+        LOGGER.info("[DyDanmaku]getParams url:" + url);
 
 
 
@@ -50,14 +51,18 @@ public class DyDanmakuRequest {
             httpGet.setHeader("cookie", "__ac_nonce=0" + GenerateToken(20)+ ";/=" +  "live.douyin.com");
             httpGet.setConfig(defaultConfig);
             CloseableHttpResponse response = httpClient.execute(httpGet);
+            //LOGGER.info("[DyDanmaku]getParams response:" + response.getStatusLine().getStatusCode());
+
 
 
             if(response != null){
                 HttpEntity entity = response.getEntity();   // 获取网页内容
                 String result = EntityUtils.toString(entity, "UTF-8");
+                //LOGGER.info("[DyDanmaku]getParams result:" + result);
 
-                roomId = result.substring(result.lastIndexOf("roomId")+11, result.lastIndexOf("roomId") + 30);
+                roomId = result.substring(result.lastIndexOf("roomId\\\":\\\"")+11, result.lastIndexOf("roomId\\\":\\\"") + 30);
                 user_unique_id = result.substring(result.indexOf("\\\"user_unique_id\\\":\\\"")+21, result.indexOf("\\\"user_unique_id\\\":\\\"") + 40);
+                //LOGGER.info("[DyDanmaku]getParams user_unique_id:" + user_unique_id);
                 live_status = result.substring(result.indexOf("\\\"status_str\\\":")+17, result.indexOf("\\\"status_str\\\":") + 18);
                 String temp = result.substring(result.indexOf("\\\"status_str\\\":")+21);
                 live_title = temp.substring(temp.indexOf("\\\"title\\\":\\\"")+12, temp.indexOf("\\\"title\\\":\\\"") + 100);
@@ -74,6 +79,7 @@ public class DyDanmakuRequest {
                 params.put("avatar", avatar);
 
 
+
                 Header responseHeader = response.getFirstHeader("Set-Cookie");
                 HeaderElement[] responseHeaderElements = responseHeader.getElements();
                 for (int i=0; i<responseHeaderElements.length; i++){
@@ -84,6 +90,7 @@ public class DyDanmakuRequest {
                 params.put("ttwid", ttwid);
 
             }
+            LOGGER.info("[DyDanmaku]getParams params:" + params);
             return params;
         }catch (Exception e) {
             LOGGER.info("[DyDanmaku]getParams error:", e);
