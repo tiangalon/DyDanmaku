@@ -1,1 +1,4 @@
 /run/
+/.idea/
+/run/logs/
+/run/config/
