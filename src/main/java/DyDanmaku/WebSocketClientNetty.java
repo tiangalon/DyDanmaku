@@ -13,6 +13,7 @@ import io.netty.handler.codec.http.websocketx.WebSocketVersion;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 
@@ -27,6 +28,7 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import static top.tiangalon.dydanmaku.DyDanmaku.*;
+import static top.tiangalon.dydanmaku.client.DyDanmakuClient.*;
 
 public class WebSocketClientNetty {
 
@@ -37,6 +39,7 @@ public class WebSocketClientNetty {
     private Channel channel;
     private static int port = 443;
     public Map<String, String> params = null;
+    public WebSocketClientHandler handler;
 
     private ServerCommandSource source = null;
 
@@ -48,6 +51,7 @@ public class WebSocketClientNetty {
         String user_unique_id = params.get("user_unique_id");
         this.ttwid = params.get("ttwid");
         //Listener.setSource(source);
+        new Thread(() -> DyDanmakuRequest.DownloadAvatar(params.get("avatar"), ConfigDirPath + "/"  + params.get("roomId") + "_avatar.png")).start();
 
 
         try {
@@ -99,7 +103,7 @@ public class WebSocketClientNetty {
                 .build();
         EventLoopGroup group = new NioEventLoopGroup();
         HttpHeaders headers = new DefaultHttpHeaders();
-        WebSocketClientHandler handler = new WebSocketClientHandler(WebSocketClientHandshakerFactory.newHandshaker(uri, WebSocketVersion.V13, null, false, headers), source);
+        handler = new WebSocketClientHandler(WebSocketClientHandshakerFactory.newHandshaker(uri, WebSocketVersion.V13, null, false, headers), source);
         headers.add("User-Agent", useragent);
         headers.add("Cookie", "ttwid="+ ttwid);
         b.group(group)
@@ -223,4 +227,5 @@ public class WebSocketClientNetty {
         MsgOutput("主播：" + params.get("nickname"));
         MsgOutput("—————————————————————————————————");
     }
+
 }

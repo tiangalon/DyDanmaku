@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/tiangalon/DyDanmaku/">
-    <img src="src/main/resources/assets/dydanmaku/icon.png" alt="Logo" width="80" height="80">
+    <img src="https://img.picui.cn/free/2025/04/26/680cd4545f571.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">抖音弹幕获取</h3>
@@ -65,7 +65,14 @@
 
 ###### 使用方法
 1. 进入游戏内世界
-2. 输入以下命令连接直播间
+2. 连接直播间
+
+（1）通过gui连接
+
+按下F7（默认按键，可在游戏内更改按键绑定），打开gui，选择“连接”
+![gui界面](https://img.picui.cn/free/2025/04/26/680cd53bb3a80.png)
+
+（2）通过命令连接
 ```Java
 /dydanmaku connect [live_id]
 ```
@@ -75,18 +82,24 @@ live_id为抖音直播间链接最后的数字部分，比如某人直播间链�
 ```Java
 /dydanmaku disconnect
 ```
+或者点击gui界面上的“已连接（断开）”按钮
+
+4.输入以下命令可以展示当前连接直播间状态：
+```Java
+/dydanmaku status
+```
 
 <h3>注意：一次只能连接一个直播间，想连接新的直播间需要先断开原来的连接</h3>
 
-### 效果图
-![屏幕截图 2024-07-22 114905](https://github.com/user-attachments/assets/ea129dfe-e4d3-4a08-8669-9ae0913a6db4)
+### 效果图（图中连接直播间在首页随便找的）
+![连接效果图](https://img.picui.cn/free/2025/04/26/680cd3123550b.png)
+![gui效果图1](https://img.picui.cn/free/2025/04/26/680cd311e094e.png)
+![gui效果图2](https://img.picui.cn/free/2025/04/26/680cd311ecf26.png)
 
 
 ### 后续改进计划
 1. 添加对forge以及更多游戏版本的支持
 2. 添加json文件配置，通过修改文件自定义弹幕输出文本
-3. 添加游戏内GUI
-
 
 
 ### 鸣谢

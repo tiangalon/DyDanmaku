@@ -18,7 +18,7 @@ import java.util.TimerTask;
 import java.util.zip.GZIPInputStream;
 
 import static io.netty.buffer.Unpooled.copiedBuffer;
-import static top.tiangalon.dydanmaku.DyDanmaku.LOGGER;
+import static top.tiangalon.dydanmaku.client.DyDanmakuClient.LOGGER;
 
 public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object> {
 
@@ -27,6 +27,7 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object> 
     private Long LogId = 0L;
     private com.google.protobuf.ByteString Payload = null;
     Timer AckTimer = new Timer();
+    public StringBuffer DanmakuList = new StringBuffer();
 
     private ServerCommandSource source = null;
 
@@ -93,7 +94,6 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object> 
 
             try {
                 Msg = Douyin.Response.parseFrom(uncompressedBytes);
-                //JsonMsg = JsonFormat.printer().print(Msg);
                 PayLoadUpdate(MsgFrame.getLogId(), Msg.getInternalExtBytes());
 
                 for (Douyin.Message SingleMsg : Msg.getMessagesListList()) {
@@ -103,6 +103,7 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object> 
                         case "WebcastChatMessage":
                             Douyin.ChatMessage ChatMessage = Douyin.ChatMessage.parseFrom(SingleMsg.getPayload());
                             MsgOutput("§b[消息]§f" + ChatMessage.getUser().getNickName() + "：" + ChatMessage.getContent());
+                            DanmakuList.append("§b[消息]§f" + ChatMessage.getUser().getNickName() + "：" + ChatMessage.getContent() + "\n");
                             //LOGGER.info("[消息]" + ChatMessage.getUser().getNickName() + "：" + ChatMessage.getContent());
                             break;
 
@@ -128,6 +129,7 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object> 
                         case "WebcastLikeMessage":
                             Douyin.LikeMessage LikeMessage = Douyin.LikeMessage.parseFrom(SingleMsg.getPayload());
                             MsgOutput("§d[点赞]§f" + LikeMessage.getUser().getNickName() + "点了" + LikeMessage.getCount() + "个赞");
+                            DanmakuAppend(DanmakuList, "§d[点赞]§f" + LikeMessage.getUser().getNickName() + "点了" + LikeMessage.getCount() + "个赞\n");
                             //LOGGER.info("[点赞]" + LikeMessage.getUser().getNickName() + "点了" + LikeMessage.getCount() + "个赞");
                             break;
 
@@ -135,13 +137,17 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object> 
                         case "WebcastGiftMessage":
                             Douyin.GiftMessage GiftMessage = Douyin.GiftMessage.parseFrom(SingleMsg.getPayload());
                             MsgOutput("§a[礼物]§f" + GiftMessage.getUser().getNickName() + "送出了" + GiftMessage.getGift().getName() + (GiftMessage.getGift().getCombo() ? "x" + GiftMessage.getComboCount() : ""));
+                            DanmakuAppend(DanmakuList,"§a[礼物]§f" + GiftMessage.getUser().getNickName() + "送出了" + GiftMessage.getGift().getName() + (GiftMessage.getGift().getCombo() ? "x" + GiftMessage.getComboCount() : "") + "\n");
                             //LOGGER.info("[礼物]" + GiftMessage.getUser().getNickName() + "送出了" + GiftMessage.getGift().getName() + (GiftMessage.getGift().getCombo() ? "x" + GiftMessage.getComboCount() : ""));
                             break;
 
                         //粉丝团消息
                         case "WebcastFansclubMessage":
                             Douyin.FansclubMessage FansclubMessage = Douyin.FansclubMessage.parseFrom(SingleMsg.getPayload());
-                            MsgOutput("§6[粉丝团]§f" + FansclubMessage.getContent());
+                            if(FansclubMessage.getContent() != null && FansclubMessage.getContent().length() > 0){
+                                MsgOutput("§6[粉丝团]§f" + FansclubMessage.getContent());
+                                DanmakuAppend(DanmakuList,"§6[粉丝团]§f" + FansclubMessage.getContent() + "\n");
+                            }
                             //LOGGER.info("[粉丝团]" + FansclubMessage.getContent());
                             break;
 
@@ -216,6 +222,14 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object> 
             source.getPlayer().sendMessage(Text.literal(msg));
         } else {
             source.getPlayer().sendMessage(Text.literal("[DyDanmaku]输出失败，未获取游戏源"));
+        }
+    }
+    public void DanmakuAppend(StringBuffer DanmakuList, String msg){
+        if (DanmakuList.length() > 10000){
+            DanmakuList.delete(0, DanmakuList.indexOf("\n") + 1);
+            DanmakuList.append(msg);
+        } else {
+            DanmakuList.append(msg);
         }
     }
 
