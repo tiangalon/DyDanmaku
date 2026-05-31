@@ -1,9 +1,37 @@
 pluginManagement {
     repositories {
+        maven { url=uri ("https://maven.aliyun.com/repository/google") }
+        maven { url=uri ("https://maven.aliyun.com/repository/central") }
+        maven { url=uri ("https://maven.aliyun.com/repository/gradle-plugin") }
+        maven { url=uri ("https://maven.aliyun.com/repository/public") }
+        maven {url=uri ("https://maven.kikugie.dev/releases")}
+        maven {url=uri ("https://maven.kikugie.dev/snapshots")}
+        google()
+        mavenCentral()
+        gradlePluginPortal()
         maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
         }
-        gradlePluginPortal()
+        maven {
+            url = "https://maven.kikugie.dev/snapshots"
+            name = "KikuGie Snapshots"
+        }
+    }
+}
+plugins {
+    id("dev.kikugie.stonecutter").version "0.9.4"
+}
+stonecutter {
+    // Enable Groovy DSL, as Stonecutter uses Kotlin by default
+    kotlinController = false
+    centralScript = "build.gradle"
+
+    // Configuration goes here
+    create(rootProject) {
+        versions("1.20.1","1.20.2","1.20.3","1.20.4","1.20.5","1.20.6")
+        versions("1.21", "1.21.1", "1.21.2", "1.21.3", "1.21.4","1.21.5","1.21.6","1.21.7","1.21.8","1.21.9","1.21.10","1.21.11")
+        versions("26.1", "26.1.1", "26.1.2")
+        vcsVersion = "1.21"
     }
 }

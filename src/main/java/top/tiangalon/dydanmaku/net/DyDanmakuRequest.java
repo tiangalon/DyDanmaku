@@ -1,4 +1,4 @@
-package DyDanmaku;
+package top.tiangalon.dydanmaku.net;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.config.CookieSpecs;
@@ -18,8 +18,6 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;

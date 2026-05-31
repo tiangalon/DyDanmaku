@@ -1,11 +1,10 @@
-package DyDanmaku;
+package top.tiangalon.dydanmaku.net;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.DefaultHeaders;
 import io.netty.handler.codec.http.*;
 import io.netty.handler.codec.http.websocketx.CloseWebSocketFrame;
 import io.netty.handler.codec.http.websocketx.WebSocketClientHandshakerFactory;
@@ -13,9 +12,10 @@ import io.netty.handler.codec.http.websocketx.WebSocketVersion;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.Text;
+import net.minecraft.commands.CommandSourceStack;
+//import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.network.chat.Component;
+//import net.minecraft.text.Text;
 
 import javax.net.ssl.SSLException;
 import java.io.*;
@@ -25,9 +25,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 
-import static top.tiangalon.dydanmaku.DyDanmaku.*;
 import static top.tiangalon.dydanmaku.client.DyDanmakuClient.*;
 
 public class WebSocketClientNetty {
@@ -41,9 +39,9 @@ public class WebSocketClientNetty {
     public Map<String, String> params = null;
     public WebSocketClientHandler handler;
 
-    private ServerCommandSource source = null;
+    private CommandSourceStack source = null;
 
-    public void init(Map<String, String> params, ServerCommandSource source) throws URISyntaxException, SSLException, InterruptedException {
+    public void init(Map<String, String> params, CommandSourceStack source) throws URISyntaxException, SSLException, InterruptedException {
         this.source = source;
         String signature;
         this.params = params;
@@ -205,9 +203,9 @@ public class WebSocketClientNetty {
 
     public void MsgOutput(String msg) {
         if (source != null) {
-            source.getPlayer().sendMessage(Text.literal(msg));
+            source.getPlayer().sendSystemMessage(Component.literal(msg));
         } else {
-            source.getPlayer().sendMessage(Text.literal("[DyDanmaku]输出失败，未获取游戏源"));
+            source.getPlayer().sendSystemMessage(Component.literal("[DyDanmaku]输出失败，未获取游戏源"));
         }
     }
 

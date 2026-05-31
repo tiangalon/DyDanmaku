@@ -1,14 +1,15 @@
-package DyDanmaku;
+package top.tiangalon.dydanmaku.net;
 
-import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
-import douyin.Douyin;
+import top.tiangalon.dydanmaku.douyin.Douyin;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.*;
 import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.websocketx.*;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.Text;
+//import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.network.chat.Component;
+//import net.minecraft.text.Text;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -29,9 +30,9 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object> 
     Timer AckTimer = new Timer();
     public StringBuffer DanmakuList = new StringBuffer();
 
-    private ServerCommandSource source = null;
+    private CommandSourceStack source = null;
 
-    public WebSocketClientHandler(WebSocketClientHandshaker handshaker, ServerCommandSource source) {
+    public WebSocketClientHandler(WebSocketClientHandshaker handshaker, CommandSourceStack source) {
         this.handshaker = handshaker;
         this.source = source;
     }
@@ -219,9 +220,9 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object> 
 
     public void MsgOutput(String msg) {
         if (source != null) {
-            source.getPlayer().sendMessage(Text.literal(msg));
+            source.getPlayer().sendSystemMessage(Component.literal(msg));
         } else {
-            source.getPlayer().sendMessage(Text.literal("[DyDanmaku]输出失败，未获取游戏源"));
+            source.getPlayer().sendSystemMessage(Component.literal("[DyDanmaku]输出失败，未获取游戏源"));
         }
     }
     public void DanmakuAppend(StringBuffer DanmakuList, String msg){

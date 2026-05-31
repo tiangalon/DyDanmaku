@@ -5,13 +5,27 @@
       <directory url="file://$PROJECT_DIR$/src/main/java/com/google/protobuf" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/src/main/java/io" includeSubdirectories="true" />
     </excludeFromCompile>
-    <bytecodeTargetLevel target="22" />
-  </component>
-  <component name="EclipseCompilerSettings">
-    <option name="DEPRECATION" value="false" />
+    <bytecodeTargetLevel>
+      <module name="DyDanmaku.1.20-fabric" target="21" />
+      <module name="DyDanmaku.1.20-fabric.main" target="21" />
+      <module name="DyDanmaku.1.20-fabric.test" target="21" />
+      <module name="DyDanmaku.1.21.3-fabric" target="21" />
+      <module name="DyDanmaku.1.21.3-fabric.main" target="21" />
+      <module name="DyDanmaku.1.21.3-fabric.test" target="21" />
+      <module name="DyDanmaku.1.21.4-fabric" target="21" />
+      <module name="DyDanmaku.1.21.4-fabric.main" target="21" />
+      <module name="DyDanmaku.1.21.4-fabric.test" target="21" />
+      <module name="DyDanmaku.main" target="17" />
+      <module name="DyDanmaku.test" target="17" />
+      <module name="forgetmp" target="17" />
+      <module name="forgetmp.main" target="17" />
+      <module name="forgetmp.test" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
-    <option name="GENERATE_NO_WARNINGS" value="true" />
-    <option name="DEPRECATION" value="false" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="DyDanmaku.main" options="-AoutRefMapFile=C:\Users\tao\IdeaProjects\DyDanmaku\build\classes\java\main\DyDanmaku-fabric-1.20.1-refmap.json -AdefaultObfuscationEnv=named:intermediary -Aquiet=true -AoutMapFileNamedIntermediary=C:\Users\tao\IdeaProjects\DyDanmaku\build\loom-cache\mixin-map-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.main.tiny -AinMapFileNamedIntermediary=C:\Users\tao\.gradle\caches\fabric-loom\1.20.1\net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2\mappings.tiny" />
+      <module name="DyDanmaku.test" options="-AoutRefMapFile=C:\Users\tao\IdeaProjects\DyDanmaku\build\classes\java\test\test-DyDanmaku-fabric-1.20.1-refmap.json -AdefaultObfuscationEnv=named:intermediary -Aquiet=true -AoutMapFileNamedIntermediary=C:\Users\tao\IdeaProjects\DyDanmaku\build\loom-cache\mixin-map-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.test.tiny -AinMapFileNamedIntermediary=C:\Users\tao\.gradle\caches\fabric-loom\1.20.1\net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2\mappings.tiny" />
+    </option>
   </component>
 </project>

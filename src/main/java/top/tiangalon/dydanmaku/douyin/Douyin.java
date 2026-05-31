@@ -3,7 +3,7 @@
 // source: douyin.proto
 // Protobuf Java Version: 4.27.2
 
-package douyin;
+package top.tiangalon.dydanmaku.douyin;
 
 public final class Douyin {
   private Douyin() {}

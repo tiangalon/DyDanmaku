@@ -1,0 +1,133 @@
+# Mod Properties
+mod.id = "dydanmaku"
+mod.version="0.1.5"
+mod.group="top.tiangalon"
+mod.name="DyDanmaku"
+
+# Fabric Properties
+fabric_loader = "0.19.2"
+loom_version = "1.14-SNAPSHOT"
+
+["1.20.1"]
+mod.mc_compat = "1.20.1"
+mod.mc_releases = ["1.20.1"]
+fabric_api = "0.92.9+1.20.1"
+yarn_mappings="1.20.1+build.10"
+
+["1.20.2"]
+mod.mc_compat = "1.20.2"
+mod.mc_releases = ["1.20.2"]
+fabric_api = "0.91.6+1.20.2"
+yarn_mappings="1.20.2+build.4"
+
+["1.20.3"]
+mod.mc_compat = "1.20.3"
+mod.mc_releases = ["1.20.3"]
+fabric_api = "0.91.1+1.20.3"
+yarn_mappings="1.20.3+build.1"
+
+["1.20.4"]
+mod.mc_compat = "1.20.4"
+mod.mc_releases = ["1.20.4"]
+fabric_api = "0.97.3+1.20.4"
+yarn_mappings="1.20.4+build.3"
+
+["1.20.5"]
+mod.mc_compat = "1.20.5"
+mod.mc_releases = ["1.20.5"]
+fabric_api = "0.97.8+1.20.5"
+yarn_mappings="1.20.5+build.1"
+
+["1.20.6"]
+mod.mc_compat = "1.20.6"
+mod.mc_releases = ["1.20.6"]
+fabric_api = "0.100.8+1.20.6"
+yarn_mappings="1.20.6+build.3"
+
+["1.21"]
+mod.mc_compat = "1.21"
+mod.mc_releases = ["1.21"]
+fabric_api = "0.102.0+1.21"
+yarn_mappings="1.21+build.9"
+
+["1.21.1"]
+mod.mc_compat = "1.21.1"
+mod.mc_releases = ["1.21.1"]
+fabric_api = "0.116.12+1.21.1"
+yarn_mappings="1.21.1+build.3"
+
+["1.21.2"]
+mod.mc_compat = "1.21.2"
+mod.mc_releases = ["1.21.2"]
+fabric_api = "0.106.1+1.21.2"
+yarn_mappings="1.21.2+build.1"
+
+["1.21.3"]
+mod.mc_compat = "1.21.3"
+mod.mc_releases = ["1.21.3"]
+fabric_api = "0.114.1+1.21.3"
+yarn_mappings="1.21.3+build.2"
+
+["1.21.4"]
+mod.mc_compat = "1.21.4"
+mod.mc_releases = ["1.21.4"]
+fabric_api = "0.119.4+1.21.4"
+yarn_mappings="1.21.4+build.8"
+
+["1.21.5"]
+mod.mc_compat = "1.21.5"
+mod.mc_releases = ["1.21.5"]
+fabric_api = "0.128.2+1.21.5"
+yarn_mappings="1.21.5+build.1"
+
+["1.21.6"]
+mod.mc_compat = "1.21.6"
+mod.mc_releases = ["1.21.6"]
+fabric_api = "0.128.2+1.21.6"
+yarn_mappings="1.21.6+build.1"
+
+["1.21.7"]
+mod.mc_compat = "1.21.7"
+mod.mc_releases = ["1.21.7"]
+fabric_api = "0.129.0+1.21.7"
+yarn_mappings="1.21.7+build.8"
+
+["1.21.8"]
+mod.mc_compat = "1.21.8"
+mod.mc_releases = ["1.21.8"]
+fabric_api = "0.136.1+1.21.8"
+yarn_mappings="1.21.8+build.1"
+
+["1.21.9"]
+mod.mc_compat = "1.21.9"
+mod.mc_releases = ["1.21.9"]
+fabric_api = "0.134.1+1.21.9"
+yarn_mappings="1.21.9+build.1"
+
+["1.21.10"]
+mod.mc_compat = "1.21.10"
+mod.mc_releases = ["1.21.10"]
+fabric_api = "0.138.4+1.21.10"
+yarn_mappings="1.21.10+build.3"
+
+
+["1.21.11"]
+mod.mc_compat = "1.21.11"
+mod.mc_releases = ["1.21.11"]
+fabric_api = "0.141.4+1.21.11"
+yarn_mappings="1.21.11+build.5"
+
+["26.1"]
+mod.mc_compat = "26.1"
+mod.mc_releases = ["26.1"]
+fabric_api = "0.145.1+26.1"
+
+["26.1.1"]
+mod.mc_compat = "26.1.1"
+mod.mc_releases = ["26.1.1"]
+fabric_api = "0.145.4+26.1.1"
+
+["26.1.2"]
+mod.mc_compat = "26.1.2"
+mod.mc_releases = ["26.1.2"]
+fabric_api = "0.149.0+26.1.2"
