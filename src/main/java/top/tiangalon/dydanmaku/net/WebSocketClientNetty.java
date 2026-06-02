@@ -1,5 +1,6 @@
 package top.tiangalon.dydanmaku.net;
 
+import top.tiangalon.dydanmaku.douyin.DySignEngine;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -18,13 +19,14 @@ import net.minecraft.network.chat.Component;
 //import net.minecraft.text.Text;
 
 import javax.net.ssl.SSLException;
-import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Map;
 import java.util.Objects;
+
+import top.tiangalon.dydanmaku.config.ConfigManager;
 
 import static top.tiangalon.dydanmaku.client.DyDanmakuClient.*;
 
@@ -49,13 +51,13 @@ public class WebSocketClientNetty {
         String user_unique_id = params.get("user_unique_id");
         this.ttwid = params.get("ttwid");
         //Listener.setSource(source);
-        new Thread(() -> DyDanmakuRequest.DownloadAvatar(params.get("avatar"), ConfigDirPath + "/"  + params.get("roomId") + "_avatar.png")).start();
+        new Thread(() -> DyDanmakuRequest.DownloadAvatar(params.get("avatar"), ConfigDirPath + "/avatars/"  + params.get("roomId") + "_avatar.png")).start();
 
 
         try {
             signature = sign(roomId, user_unique_id);
-        } catch (IOException e) {
-            LOGGER.info("[DyDanmaku]无法连接房间：获取签名失败");
+        } catch (Exception e) {
+            LOGGER.info("[DyDanmaku]无法连接房间：获取签名失败", e);
             return;
         }
 
@@ -93,6 +95,8 @@ public class WebSocketClientNetty {
     }
 
     public void run() throws URISyntaxException, SSLException, InterruptedException {
+        String sessionId = ConfigManager.getSessionId(ConfigDirPath);
+
         URI uri = new URI(this.uri);
 
         Bootstrap b = new Bootstrap();
@@ -103,7 +107,11 @@ public class WebSocketClientNetty {
         HttpHeaders headers = new DefaultHttpHeaders();
         handler = new WebSocketClientHandler(WebSocketClientHandshakerFactory.newHandshaker(uri, WebSocketVersion.V13, null, false, headers), source);
         headers.add("User-Agent", useragent);
-        headers.add("Cookie", "ttwid="+ ttwid);
+        if (sessionId != null) {
+            headers.add("Cookie", "ttwid="+ ttwid + ";sessionid=" + sessionId);
+        } else {
+            headers.add("Cookie", "ttwid="+ ttwid);
+        }
         b.group(group)
                 .channel(NioSocketChannel.class)
                 .handler(new ChannelInitializer<SocketChannel>() {
@@ -124,56 +132,12 @@ public class WebSocketClientNetty {
 
     }
 
-    public static String sign(String roomId, String user_unique_id) throws IOException {
-        String command = "";
-
-        if (isRunInJar()) {
-            //在jar中运行时
-            command = ConfigDirPath + "/Signature.exe "+ roomId + " " + user_unique_id;
-        } else {
-            //在IDE中运行时
-            command = WebSocketClientNetty.class.getClassLoader().getResource("./Signature.exe").getPath() + " " + roomId + " " + user_unique_id;
-        }
-
-
-        //command = ConfigDirPath + "/Signature.exe "+ roomId + " " + user_unique_id;
-
-        Process process = null;
-        String signature = "";
-        try {
-            process = Runtime.getRuntime().exec(command);
-            process.waitFor();
-            InputStream is = process.getInputStream();
-            InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-            BufferedReader br = new BufferedReader(isr);
-            signature = br.readLine();
-            return signature;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
-            if (process!= null) {
-                process.destroy();
-            }
-        }
-        return signature;
-    }
-
-    public static void getSignFile(String SignFilePath) throws IOException {
-        InputStream SignFile = WebSocketClientNetty.class.getClassLoader().getResourceAsStream("Signature.exe");
-        if (SignFile == null) {
-            LOGGER.info("Signature.exe not found in resources");
-        }else{
-            int index;
-            byte[] bytes = new byte[1024];
-            FileOutputStream downloadFile = new FileOutputStream(SignFilePath);
-            while ((index = SignFile.read(bytes)) != -1) {
-                downloadFile.write(bytes, 0, index);
-                downloadFile.flush();
-            }
-            downloadFile.close();
-            SignFile.close();
-        }
+    /**
+     * 使用 DySignEngine 纯 Java 签名引擎生成签名
+     * (替代原有的外部 Signature.exe 进程调用)
+     */
+    public static String sign(String roomId, String user_unique_id) {
+        return DySignEngine.generateSignature(roomId, user_unique_id);
     }
 
     public static String getPath() {

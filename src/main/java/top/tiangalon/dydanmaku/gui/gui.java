@@ -36,7 +36,7 @@ import net.minecraft.network.chat.Component;
     //import net.minecraft.client.gl.RenderPipelines;
     import net.minecraft.client.renderer.RenderPipelines;
     //? if >= 1.21.9 {
-        /*//import net.minecraft.client.input.KeyInput;
+        //import net.minecraft.client.input.KeyInput;
         import net.minecraft.client.input.KeyEvent;
 
         import net.minecraft.client.input.MouseButtonEvent;
@@ -45,20 +45,20 @@ import net.minecraft.network.chat.Component;
         import net.minecraft.client.input.CharacterEvent;
         //import net.minecraft.client.input.CharInput;
         //? if >= 26.1 {
-        /^import net.minecraft.client.gui.GuiGraphicsExtractor;
-        ^///?}
-    *///?}
+        import net.minecraft.client.gui.GuiGraphicsExtractor;
+        //?}
+    //?}
 //?}
 
 //? if < 1.21.11{
-import net.minecraft.resources.ResourceLocation;
-//?} else {
-/*import net.minecraft.resources.Identifier;
-*///?}
-//? if < 26.1{
-//import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.GuiGraphics;
+/*import net.minecraft.resources.ResourceLocation;
+*///?} else {
+import net.minecraft.resources.Identifier;
 //?}
+//? if < 26.1{
+/*//import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.GuiGraphics;
+*///?}
 
 import org.jetbrains.annotations.UnknownNullability;
 import top.tiangalon.dydanmaku.net.WebSocketClientNetty;
@@ -94,10 +94,10 @@ public class gui extends Screen {
     //? if < 1.21 {
     /*private static final ResourceLocation AVATAR_ID = ResourceLocation.tryParse("dydanmaku:avatar");
     *///?} else if < 1.21.11 {
-    private static final ResourceLocation AVATAR_ID = ResourceLocation.parse("dydanmaku:avatar");
-    //?} else {
-    /*private static final Identifier AVATAR_ID = Identifier.parse("dydanmaku:avatar");
-    *///?}
+    /*private static final ResourceLocation AVATAR_ID = ResourceLocation.parse("dydanmaku:avatar");
+    *///?} else {
+    private static final Identifier AVATAR_ID = Identifier.parse("dydanmaku:avatar");
+    //?}
     private boolean avatarRegistered = false;
     private Font font;
 
@@ -216,19 +216,19 @@ public class gui extends Screen {
 
     @Override
     //? if < 26.1 {
-    public void render(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
+    /*public void render(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
         super.render(graphics, mouseX, mouseY, delta);
-    //?} else {
-    /*public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
+    *///?} else {
+    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
         super.extractRenderState(graphics, mouseX, mouseY, delta);
-    *///?}
+    //?}
 
         //GUI标题
         //? if < 26.1 {
-        graphics.drawString(this.font, "DyDanmaku", 40, 40 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
-        //?} else {
-        /*graphics.text(this.font, "DyDanmaku", 40, 40 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
-        *///?}
+        /*graphics.drawString(this.font, "DyDanmaku", 40, 40 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
+        *///?} else {
+        graphics.text(this.font, "DyDanmaku", 40, 40 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
+        //?}
 
         //弹幕服务器已连接界面
         if (websocket.params != null && websocket.isConnected()) {
@@ -239,17 +239,17 @@ public class gui extends Screen {
                 connectButton.setMessage(Component.literal("§4断开§f"));
             }
             //? if < 26.1 {
-            graphics.drawString(this.font, "直播间状态: 已连接", 40, 50 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
+            /*graphics.drawString(this.font, "直播间状态: 已连接", 40, 50 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
             graphics.drawString(this.font, "直播间标题：" + websocket.params.get("live_title"), 40, 60 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
-            //?} else {
-            /*graphics.text(this.font, "直播间状态: 已连接", 40, 50 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
+            *///?} else {
+            graphics.text(this.font, "直播间状态: 已连接", 40, 50 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
             graphics.text(this.font, "直播间标题：" + websocket.params.get("live_title"), 40, 60 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
-            *///?}
+            //?}
             //? if < 1.21.11 {
-            ResourceLocation avatar_loading = ResourceLocation.tryBuild("dydanmaku", "textures/gui/sprite/loading.png");
-            //?} else {
-            /*Identifier avatar_loading = Identifier.fromNamespaceAndPath("dydanmaku", "textures/gui/sprite/loading.png");
-            *///?}
+            /*ResourceLocation avatar_loading = ResourceLocation.tryBuild("dydanmaku", "textures/gui/sprite/loading.png");
+            *///?} else {
+            Identifier avatar_loading = Identifier.fromNamespaceAndPath("dydanmaku", "textures/gui/sprite/loading.png");
+            //?}
 
             // 使用动态纹理方式绘制头像
             if (avatarRegistered) {
@@ -276,20 +276,20 @@ public class gui extends Screen {
                 //?}
             }
             //? if < 26.1 {
-            graphics.drawString(this.font, "主播：" + websocket.params.get("nickname"), 50 + 40 + 10, 70 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
-            //? } else {
-            /*graphics.text(this.font, "主播：" + websocket.params.get("nickname"), 50 + 40 + 10, 70 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
-            *///?}
+            /*graphics.drawString(this.font, "主播：" + websocket.params.get("nickname"), 50 + 40 + 10, 70 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
+            *///? } else {
+            graphics.text(this.font, "主播：" + websocket.params.get("nickname"), 50 + 40 + 10, 70 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
+            //?}
             DanmakuScrollBox.visible = true;
         } else {
             liveIdInput.setX(40);
             connectButton.setX(170);
             connectButton.setMessage(Component.literal("连接"));
             //? if < 26.1 {
-            graphics.drawString(this.font, "直播间状态: 未连接", 40, 50 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
-            //? } else {
-            /*graphics.text(this.font, "直播间状态: 未连接", 40, 50 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
-            *///?}
+            /*graphics.drawString(this.font, "直播间状态: 未连接", 40, 50 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
+            *///? } else {
+            graphics.text(this.font, "直播间状态: 未连接", 40, 50 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
+            //?}
 
             DanmakuScrollBox.visible = false;
         }
@@ -298,7 +298,7 @@ public class gui extends Screen {
     //重复按下热键关闭GUI，按回车连接直播间
     @Override
     //? if < 1.21.9 {
-    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+    /*public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
     if (DyDanmakuKey.matches(keyCode,scanCode)) {
             onClose();
             return true;
@@ -314,8 +314,8 @@ public class gui extends Screen {
         }
         return super.keyPressed(keyCode, scanCode, modifiers);
     }
-    //?} else {
-    /*public boolean keyPressed(KeyEvent keyEvent) {
+    *///?} else {
+    public boolean keyPressed(KeyEvent keyEvent) {
         int keycode = keyEvent.key();
         //LOGGER.info("[DyDanmaku]keycode: " + keycode);
         if (DyDanmakuKey.matches(keyEvent)) {
@@ -334,24 +334,24 @@ public class gui extends Screen {
 
         return super.keyPressed(keyEvent);
     }
-    *///?}
+    //?}
 
     @Override
     //? if < 1.21.9 {
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+    /*public boolean mouseClicked(double mouseX, double mouseY, int button) {
         if (liveIdInput.mouseClicked(mouseX, mouseY, button)) {
             return true;
         }
         return super.mouseClicked(mouseX, mouseY, button);
     }
-    //?} else {
-    /*public boolean mouseClicked(MouseButtonEvent click, boolean doubled) {
+    *///?} else {
+    public boolean mouseClicked(MouseButtonEvent click, boolean doubled) {
         if (!liveIdInput.isHovered()) {
             liveIdInput.setFocused(false);
         }
         return super.mouseClicked(click, doubled);
     }
-    *///?}
+    //?}
 
     //GUI打开时不暂停
     @Override
@@ -410,10 +410,10 @@ public class gui extends Screen {
         //? if < 1.20.3 {
         /*public void render(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
          *///?} else if < 26.1{
-        public void renderWidget(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
-        //?} else {
-        /*public void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
-        *///?}
+        /*public void renderWidget(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
+        *///?} else {
+        public void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
+        //?}
             //裁剪管理
             graphics.enableScissor(x, y, x + width, y + height);
 
@@ -429,10 +429,10 @@ public class gui extends Screen {
             for (int i = 1; startLine - i >= endLine; i++) {
                 int yPos = y + height - (i * font.lineHeight) + Math.floorMod(scrollOffset, font.lineHeight);
                 //? if < 26.1 {
-                graphics.drawString(font, lines.get(startLine - i), x + 2, yPos, 0xFFFFFFFF, false);
-                //?} else {
-                /*graphics.text(font, lines.get(startLine - i), x + 2, yPos, 0xFFFFFFFF, false);
-                *///?}
+                /*graphics.drawString(font, lines.get(startLine - i), x + 2, yPos, 0xFFFFFFFF, false);
+                *///?} else {
+                graphics.text(font, lines.get(startLine - i), x + 2, yPos, 0xFFFFFFFF, false);
+                //?}
             }
 
             // 绘制滚动条
@@ -471,10 +471,10 @@ public class gui extends Screen {
         }
 
         //? if < 26.1 {
-        private void drawScrollBar(GuiGraphics graphics) {
-        //?} else {
-        /*private void drawScrollBar(@UnknownNullability GuiGraphicsExtractor graphics) {
-        *///?}
+        /*private void drawScrollBar(GuiGraphics graphics) {
+        *///?} else {
+        private void drawScrollBar(@UnknownNullability GuiGraphicsExtractor graphics) {
+        //?}
             int maxScrollOffset = getMaxScrollOffset();
             int scrollBarX = x + width - SCROLL_BAR_WIDTH;
 
@@ -495,7 +495,7 @@ public class gui extends Screen {
 
         @Override
                 //? if < 1.21.9 {
-        public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        /*public boolean mouseClicked(double mouseX, double mouseY, int button) {
             if (button == 0 && isMouseOver(mouseX, mouseY)) {
                 int scrollBarX = x + width - SCROLL_BAR_WIDTH;
                 if (mouseX >= scrollBarX && mouseX <= scrollBarX + SCROLL_BAR_WIDTH) {
@@ -507,8 +507,8 @@ public class gui extends Screen {
             }
             return super.mouseClicked(mouseX, mouseY, button);
         }
-        //?} else {
-        /*public boolean mouseClicked(MouseButtonEvent click, boolean doubled) {
+        *///?} else {
+        public boolean mouseClicked(MouseButtonEvent click, boolean doubled) {
             if (isMouseOver(click.x(), click.y())) {
                 double mouseX = click.x();
                 double mouseY = click.y();
@@ -522,11 +522,11 @@ public class gui extends Screen {
             }
             return super.mouseClicked(click, doubled);
         }
-        *///?}
+        //?}
 
         @Override
         //? if < 1.21.9 {
-        public boolean mouseDragged(double mouseX, double mouseY, int button, double deltaX, double deltaY) {
+        /*public boolean mouseDragged(double mouseX, double mouseY, int button, double deltaX, double deltaY) {
             if (draggingScrollBar) {
                 int maxScrollOffset = getMaxScrollOffset();
                 if (maxScrollOffset == 0) {
@@ -540,8 +540,8 @@ public class gui extends Screen {
             }
             return super.mouseDragged(mouseX, mouseY, button, deltaX, deltaY);
         }
-        //?} else {
-        /*public boolean mouseDragged(MouseButtonEvent click, double offsetX, double offsetY) {
+        *///?} else {
+        public boolean mouseDragged(MouseButtonEvent click, double offsetX, double offsetY) {
             double mouseX = click.x();
             double mouseY = click.y();
             if (draggingScrollBar) {
@@ -554,20 +554,20 @@ public class gui extends Screen {
             }
             return super.mouseDragged(click, offsetX, offsetY);
         }
-        *///?}
+        //?}
 
         @Override
         //? if < 1.21.9 {
-        public boolean mouseReleased(double mouseX, double mouseY, int button) {
+        /*public boolean mouseReleased(double mouseX, double mouseY, int button) {
             draggingScrollBar = false;
             return super.mouseReleased(mouseX, mouseY, button);
         }
-        //?} else {
-        /*public boolean mouseReleased(MouseButtonEvent click) {
+        *///?} else {
+        public boolean mouseReleased(MouseButtonEvent click) {
             draggingScrollBar = false;
             return super.mouseReleased(click);
         }
-        *///?}
+        //?}
     }
 
     // 自定义输入框组件
@@ -584,10 +584,10 @@ public class gui extends Screen {
         //? if < 1.20.3 {
         /*public void render(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
         *///?} else if < 26.1{
-        public void renderWidget(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
-        //?} else {
-        /*public void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
-        *///?}
+        /*public void renderWidget(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
+        *///?} else {
+        public void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
+        //?}
             // 更新光标状态
             long currentTime = System.currentTimeMillis();
             if (currentTime - lastBlinkTime > BLINK_INTERVAL) {
@@ -606,10 +606,10 @@ public class gui extends Screen {
             if(websocket.isConnected()){
                 this.setFocused(false);
                 //? if < 26.1 {
-                graphics.drawString(
-                //?} else {
-                /*graphics.text(
-                *///?}
+                /*graphics.drawString(
+                *///?} else {
+                graphics.text(
+                //?}
                         font,
                         Component.literal(websocket.params.get("live_id")),
                         this.getX() + 4,
@@ -619,10 +619,10 @@ public class gui extends Screen {
             } else {
                 if (this.getValue().isEmpty() && !this.isFocused()) {
                     //? if < 26.1 {
-                    graphics.drawString(
-                    //?} else {
-                    /*graphics.text(
-                    *///?}
+                    /*graphics.drawString(
+                    *///?} else {
+                    graphics.text(
+                    //?}
                             font,
                             this.getMessage(),
                             this.getX() + 4,
@@ -641,10 +641,10 @@ public class gui extends Screen {
             int textX = this.getX() + 4;
             int textY = this.getY() + (this.height - 8) / 2;
             //? if < 26.1 {
-            graphics.drawString(
-            //?} else {
-            /*graphics.text(
-            *///?}
+            /*graphics.drawString(
+            *///?} else {
+            graphics.text(
+            //?}
                     font,
                     visibleText,
                     textX,
@@ -669,7 +669,7 @@ public class gui extends Screen {
 
         @Override
         //? if < 1.21.9 {
-        public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        /*public boolean mouseClicked(double mouseX, double mouseY, int button) {
             if (mouseX >= this.getX() && mouseX <= this.getX() + this.width && mouseY >= this.getY() && mouseY <= this.getY() + this.height) {
                     this.setFocused(true);
                     return true;
@@ -678,8 +678,8 @@ public class gui extends Screen {
             }
             return super.mouseClicked(mouseX, mouseY, button);
         }
-        //? } else {
-        /*public boolean mouseClicked(MouseButtonEvent click, boolean doubled) {
+        *///? } else {
+        public boolean mouseClicked(MouseButtonEvent click, boolean doubled) {
             double mouseX = click.x();
             double mouseY = click.y();
             //LOGGER.info("[DyDanmaku]LiveInputmouseClicked: " + mouseX + " " + mouseY);
@@ -691,7 +691,7 @@ public class gui extends Screen {
             }
             return super.mouseClicked(click, doubled);
         }
-        *///? }
+        //? }
 
     }
 
@@ -699,7 +699,7 @@ public class gui extends Screen {
     // 在gui类中添加输入处理
     @Override
     //? if < 1.21.9 {
-    public boolean charTyped(char chr, int modifiers) {
+    /*public boolean charTyped(char chr, int modifiers) {
         if (liveIdInput.isFocused()) {
             if (chr == 13) { // 回车键确认
                 connectButton.onPress();
@@ -709,14 +709,14 @@ public class gui extends Screen {
         }
         return super.charTyped(chr, modifiers);
     }
-        //? } else {
-    /*public boolean charTyped(CharacterEvent input) {
+        *///? } else {
+    public boolean charTyped(CharacterEvent input) {
         if (liveIdInput.isFocused()) {
             return liveIdInput.charTyped(input);
         }
         return super.charTyped(input);
     }
-    *///?}
+    //?}
 
 
 

@@ -1,5 +1,6 @@
 package top.tiangalon.dydanmaku.client;
 
+import top.tiangalon.dydanmaku.config.ConfigManager;
 import top.tiangalon.dydanmaku.net.DyDanmakuRequest;
 import top.tiangalon.dydanmaku.net.WebSocketClientNetty;
 import com.mojang.brigadier.Command;
@@ -21,21 +22,19 @@ import net.minecraft.network.chat.Component;
 /*import  net.minecraft.resources.ResourceLocation;
 *///? }
 //? if >= 1.21.11 {
-/*import  net.minecraft.resources.Identifier;
-*///?}
+import  net.minecraft.resources.Identifier;
+//?}
 
 //? if < 26.1 {
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-//?} else {
-/*import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
-*///?}
+/*import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+*///?} else {
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
+//?}
 
 
 import java.io.File;
-import java.io.IOException;
+import java.net.URL;
 import java.util.Map;
-
-import static top.tiangalon.dydanmaku.net.WebSocketClientNetty.getSignFile;
 
 public class DyDanmakuClient implements ClientModInitializer {
     public static final String MOD_ID = "DyDanmaku";
@@ -47,7 +46,44 @@ public class DyDanmakuClient implements ClientModInitializer {
     public static KeyMapping DyDanmakuKey;
 
     public static String DyDanmakuPath = WebSocketClientNetty.getPath();
-    public static String ConfigDirPath = DyDanmakuPath.substring(0, DyDanmakuPath.lastIndexOf("/")) + "/config/DyDanmaku";
+    public static String ConfigDirPath = computeConfigDirPath();
+
+    private static String computeConfigDirPath() {
+        try {
+            if (isRunInJar()) {
+                // JAR 模式：当前 jar 所在文件夹的上一级文件夹中的 config 文件夹中的 dydanmaku 文件夹
+                URL jarUrl = WebSocketClientNetty.class.getProtectionDomain().getCodeSource().getLocation();
+                File jarFile = new File(jarUrl.toURI());
+                File jarDir = jarFile.getParentFile();
+                if (jarDir != null) {
+                    File parentDir = jarDir.getParentFile();
+                    if (parentDir != null) {
+                        return new File(parentDir, "config/dydanmaku").getAbsolutePath();
+                    }
+                }
+            } else {
+                // IDE 模式：versions 中对应版本文件夹中的 config 文件夹
+                File codeSource = new File(WebSocketClientNetty.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+                File current = codeSource;
+                while (current != null) {
+                    File parent = current.getParentFile();
+                    if (parent != null && "versions".equals(parent.getName())) {
+                        String version = current.getName();
+                        File projectRoot = parent.getParentFile();
+                        if (projectRoot != null) {
+                            return new File(projectRoot, "versions/" + version + "/run/config/dydanmaku").getAbsolutePath();
+                        }
+                        break;
+                    }
+                    current = parent;
+                }
+            }
+        } catch (Exception e) {
+            LOGGER.info("[DyDanmaku]计算ConfigDirPath失败", e);
+        }
+        // 回退
+        return new File(DyDanmakuPath, "config/dydanmaku").getAbsolutePath();
+    }
 
 
     @Override
@@ -132,21 +168,21 @@ public class DyDanmakuClient implements ClientModInitializer {
         });
 
         //? if < 26.1 {
-        DyDanmakuKey = KeyBindingHelper.registerKeyBinding(
-        //?} else {
-        /*DyDanmakuKey = KeyMappingHelper.registerKeyMapping(
-        *///?}
+        /*DyDanmakuKey = KeyBindingHelper.registerKeyBinding(
+        *///?} else {
+        DyDanmakuKey = KeyMappingHelper.registerKeyMapping(
+        //?}
             new KeyMapping(
                     "key.dydanmaku.gui",
                     Type.KEYSYM,
                     GLFW.GLFW_KEY_F7,
                     //? if < 1.21.9 {
-                    "key.category.dydanmaku.dydanmakukey"
-                    //? } else if < 1.21.11 {
+                    /*"key.category.dydanmaku.dydanmakukey"
+                    *///? } else if < 1.21.11 {
                     /*KeyMapping.Category.register(ResourceLocation.fromNamespaceAndPath("dydanmaku","dydanmakukey"))
                     *///? } else {
-                    /*KeyMapping.Category.register(Identifier.fromNamespaceAndPath("dydanmaku","dydanmakukey"))
-                    *///? }
+                    KeyMapping.Category.register(Identifier.fromNamespaceAndPath("dydanmaku","dydanmakukey"))
+                    //? }
             )
         );
 
@@ -174,25 +210,15 @@ public class DyDanmakuClient implements ClientModInitializer {
             LOGGER.info("[DyDanmaku]DyDanmaku is Running in JAR");
             File ConfigDir = new File(ConfigDirPath);
             if  (!ConfigDir.exists()  && !ConfigDir.isDirectory()) {
-                LOGGER.info("[DyDanmaku]/config/DyDanmaku不存在,创建目录");
+                LOGGER.info("[DyDanmaku]config目录不存在,创建目录");
                 ConfigDir.mkdirs();
             } else {
-                LOGGER.info("[DyDanmaku]/config/DyDanmaku目录存在");
+                LOGGER.info("[DyDanmaku]config目录存在");
             }
-            String SignFilePath = ConfigDirPath + "/Signature.exe";
-            File SignFile = new File(SignFilePath);
-            if(!SignFile.exists()) {
-                LOGGER.info("[DyDanmaku]Signature.exe不存在,创建文件");
-                try {
-                    getSignFile(SignFilePath);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            } else {
-                LOGGER.info("[DyDanmaku]Signature.exe文件存在");
-            }
+            ConfigManager.createDefaultConfig(ConfigDirPath);
         } else {
             LOGGER.info("[DyDanmaku]DyDanmaku is Running in IDE");
+            ConfigManager.createDefaultConfig(ConfigDirPath);
         }
     }
 }
