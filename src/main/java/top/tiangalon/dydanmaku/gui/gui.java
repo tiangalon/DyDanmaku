@@ -61,6 +61,7 @@ import net.minecraft.client.gui.GuiGraphics;
 *///?}
 
 import org.jetbrains.annotations.UnknownNullability;
+import top.tiangalon.dydanmaku.config.ConfigManager;
 import top.tiangalon.dydanmaku.net.WebSocketClientNetty;
 
 import org.lwjgl.glfw.GLFW;
@@ -74,6 +75,7 @@ import java.util.List;
 
 import static top.tiangalon.dydanmaku.client.DyDanmakuClient.DyDanmakuKey;
 import static top.tiangalon.dydanmaku.client.DyDanmakuClient.LOGGER;
+import static top.tiangalon.dydanmaku.client.DyDanmakuClient.ConfigDirPath;
 
 public class gui extends Screen {
     public Boolean isConnected = false;
@@ -238,6 +240,20 @@ public class gui extends Screen {
             if(connectButton.isHovered()){
                 connectButton.setMessage(Component.literal("§4断开§f"));
             }
+            // 检查DySessionId是否设置，未设置则显示警告
+            String sessionId = ConfigManager.getSessionId(ConfigDirPath);
+            if (sessionId == null || sessionId.isEmpty()) {
+                liveIdInput.setY(65);
+                connectButton.setY(65);
+                //? if < 26.1 {
+                /*graphics.drawString(this.font, "当前未设置抖音sessionid，可能无法收到礼物信息", liveIdInput.getX(), liveIdInput.getY() + 22, 0xFFFF5555, true);
+                *///?} else {
+                graphics.text(this.font, "当前未设置抖音sessionid，可能无法收到礼物信息", liveIdInput.getX(), liveIdInput.getY() + 22, 0xFFFF5555, true);
+                //?}
+            } else {
+                liveIdInput.setY(70);
+                connectButton.setY(70);
+            }
             //? if < 26.1 {
             /*graphics.drawString(this.font, "直播间状态: 已连接", 40, 50 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
             graphics.drawString(this.font, "直播间标题：" + websocket.params.get("live_title"), 40, 60 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
@@ -283,7 +299,9 @@ public class gui extends Screen {
             DanmakuScrollBox.visible = true;
         } else {
             liveIdInput.setX(40);
+            liveIdInput.setY(70);
             connectButton.setX(170);
+            connectButton.setY(70);
             connectButton.setMessage(Component.literal("连接"));
             //? if < 26.1 {
             /*graphics.drawString(this.font, "直播间状态: 未连接", 40, 50 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
