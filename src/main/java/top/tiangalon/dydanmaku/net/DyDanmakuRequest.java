@@ -116,10 +116,10 @@ public class DyDanmakuRequest {
     public static void DownloadAvatar(String url, String path) {
         File ConfigDir = new File(ConfigDirPath);
         if  (!ConfigDir.exists()  && !ConfigDir.isDirectory()) {
-            LOGGER.info("[DyDanmaku]/config/DyDanmaku不存在,创建目录");
+            LOGGER.info("[DyDanmaku]config目录不存在,创建目录");
             ConfigDir.mkdirs();
         } else {
-            LOGGER.info("[DyDanmaku]/config/DyDanmaku目录存在");
+            LOGGER.info("[DyDanmaku]config目录存在");
         }
         HttpURLConnection connection = null;
         try {

@@ -65,6 +65,8 @@ dependencies {
     // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
     implementation 'com.google.protobuf:protobuf-java:4.27.2'
     implementation 'io.netty:netty-codec-http:4.1.81.Final'
+    implementation 'com.moandjiezana.toml:toml4j:0.7.2'
+    implementation 'org.openjdk.nashorn:nashorn-core:15.4'
     if (sc.current.parsed >= "1.21.11") {
         implementation 'org.apache.httpcomponents:httpclient:4.5.14'
         implementation 'org.apache.httpcomponents:httpcore:4.4.16'
@@ -126,9 +128,18 @@ jar {
 }
 
 shadowJar {
+    // 26.1+ 使用 fabric-loom（非 remap），shadowJar 作为最终产物，不加分类器
+    // < 26.1 使用 fabric-loom-remap，shadowJar 输出带 -all 分类器，供 remapJar 处理
+    if (sc.current.parsed >= "26.1") {
+        archiveClassifier.set('')
+    } else {
+        archiveClassifier.set('all')
+    }
     dependencies{
         include(dependency('com.google.protobuf:protobuf-java:4.27.2'))
         include(dependency('io.netty:netty-codec-http:4.1.81.Final'))
+        include(dependency('com.moandjiezana.toml:toml4j:0.7.2'))
+        include(dependency('org.openjdk.nashorn:nashorn-core:15.4'))
         if (sc.current.parsed >= "1.21.11") {
             include(dependency('org.apache.httpcomponents:httpclient:4.5.14'))
             include(dependency('org.apache.httpcomponents:httpcore:4.4.16'))
@@ -142,6 +153,12 @@ if(sc.current.parsed <= "1.21.11"){
         dependsOn(shadowJar)
         inputFile = tasks.shadowJar.archiveFile
     }
+} else {
+    // 26.1+ uses fabric-loom, shadowJar is the final build artifact
+    // 禁用默认 jar task，避免与 shadowJar（无分类器）冲突
+    tasks.named('jar').configure { enabled = false }
+    tasks.named('build').configure { dependsOn(shadowJar) }
+    tasks.named('assemble').configure { dependsOn(shadowJar) }
 }
 
 
@@ -161,6 +178,85 @@ publishing {
         // Notice: This block does NOT have the same function as the block in the top level.
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
+    }
+}
+
+// ============================================================
+// Release tasks — collect all version JARs for GitHub Releases
+// ============================================================
+
+tasks.register('collectReleaseArtifacts') {
+    group = 'release'
+    description = 'Collect all version JARs and source JARs into build/release'
+
+    doLast {
+        def releaseDir = layout.buildDirectory.dir('release').get().asFile
+        releaseDir.deleteDir()
+        releaseDir.mkdirs()
+
+        // Scan all version subdirectories for built JARs
+        def versionsRoot = rootProject.projectDir.toPath().resolve('versions')
+        if (versionsRoot.toFile().exists()) {
+            versionsRoot.toFile().eachDir { versionDir ->
+                def libsDir = new File(versionDir, 'build/libs')
+                if (libsDir.exists()) {
+                    libsDir.eachFile { jarFile ->
+                        if (jarFile.name.endsWith('.jar') && !jarFile.name.contains('-all.jar')) {
+                            def dest = new File(releaseDir, jarFile.name)
+                            println "[release] ${jarFile.name} -> ${dest}"
+                            java.nio.file.Files.copy(
+                                jarFile.toPath(), dest.toPath(),
+                                java.nio.file.StandardCopyOption.REPLACE_EXISTING
+                            )
+                        }
+                    }
+                }
+            }
+        }
+
+        // Also include root build/libs if present
+        def rootLibs = layout.buildDirectory.dir('libs').get().asFile
+        if (rootLibs.exists()) {
+            rootLibs.eachFile { jarFile ->
+                if (jarFile.name.endsWith('.jar') && !jarFile.name.contains('-all.jar')) {
+                    def dest = new File(releaseDir, jarFile.name)
+                    println "[release] root: ${jarFile.name} -> ${dest}"
+                    java.nio.file.Files.copy(
+                        jarFile.toPath(), dest.toPath(),
+                        java.nio.file.StandardCopyOption.REPLACE_EXISTING
+                    )
+                }
+            }
+        }
+
+        // Generate a release manifest
+        def infoFile = new File(releaseDir, 'release-info.txt')
+        def jarList = releaseDir.listFiles()
+            ?.findAll { it.name.endsWith('.jar') }
+            ?.collect { "  - ${it.name} (${String.format('%.2f', it.length() / 1024 / 1024)} MB)" }
+            ?.join('\n') ?: '  (no JARs found)'
+        infoFile.text = """\
+            |Release v${project.version}
+            |Mod   : ${modName}
+            |Group : ${project.group}
+            |Date  : ${new Date().format('yyyy-MM-dd HH:mm:ss')}
+            |
+            |Artifacts:
+            |${jarList}
+            |""".stripMargin()
+
+        println "\n[release] ${releaseDir.listFiles()?.size() ?: 0} files collected."
+        println "[release] Output: ${releaseDir.absolutePath}"
+    }
+}
+
+// Hook: ensure collectReleaseArtifacts runs after all subproject builds (when available)
+gradle.projectsEvaluated {
+    def allBuildTasks = subprojects.collect { it.tasks.findByName('build') }.findAll { it != null }
+    if (!allBuildTasks.isEmpty()) {
+        tasks.named('collectReleaseArtifacts').configure {
+            dependsOn allBuildTasks
+        }
     }
 }
 
