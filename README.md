@@ -69,54 +69,64 @@
 ### 使用方法
 
 <details>
-<summary>0. 设置模组配置（可选）</summary>
+<summary><b>前置步骤：设置模组配置（可选）</b></summary>
+<br>
 
 模组的缓存与配置文件存放于游戏版本文件夹中 `config/dydanmaku` 目录下，其中 `DyDanmakuSettings.toml` 为本模组配置文件，启动一次游戏后自动生成。
 
 由于抖音官方政策的限制，现在需要配置用户sessionid才可获取礼物等全部弹幕信息，因此需要自行从官网cookies中复制该值并加入配置文件。
 
-不配置不影响mod正常使用，下面是sessionid的获取与配置方法，若无需配置可直接进入下一步。
+> 不配置不影响mod正常使用，若无需配置可直接进入下一步。
 
 **sessionid的获取与配置方法：**
 
 1. 进入 [抖音直播官网](https://live.douyin.com/) 并登录自己账号
-2. 打开浏览器开发者工具，一般快捷键为F12（下面以谷歌浏览器为例，其他浏览器自行寻找方法）
-3. 找到Cookie中sessionid的值并复制（具体方法参考图片）
+2. 打开浏览器开发者工具，一般快捷键为 `F12`（下面以谷歌浏览器为例，其他浏览器自行寻找方法）
+3. 找到 Cookie 中 `sessionid` 的值并复制（具体方法参考下图）
 
 <img src="./pic/sessionid获取方法.png" style="margin: 0 auto;">
 
-4. 在游戏版本文件夹 `/config/dydanmaku/DyDanmakuSettings.toml` 中配置sessionid
+4. 在游戏版本文件夹 `/config/dydanmaku/DyDanmakuSettings.toml` 中配置 `sessionid`
 
 <img src="./pic/sessionid设置方法.png" style="margin: 0 auto;">
 
 </details>
 
-1. 进入游戏内世界
-2. 连接直播间
+#### 第一步：进入游戏内世界
 
-**（1）通过GUI连接：**
+启动游戏，进入任意一个单人世界。
 
-按下F7（默认按键，可在游戏内更改按键绑定），打开GUI，选择"连接"
+#### 第二步：连接直播间
+
+提供以下两种连接方式，任选其一即可：
+
+**方式一：通过 GUI 连接**
+
+按下 `F7`（默认按键，可在游戏内更改按键绑定），打开 GUI，点击"连接"按钮。
 
 ![gui界面](./pic/gui界面.jpg)
 
-**（2）通过命令连接：**
+**方式二：通过命令连接**
 
 ```java
 /dydanmaku connect [live_id]
 ```
 
-`live_id` 为抖音直播间链接最后的数字部分，比如某人直播间链接为 `https://live.douyin.com/1234567890`，那么 `live_id` 就是 `1234567890`，所以应该输入 `/dydanmaku connect 1234567890`。
+> `live_id` 即抖音直播间链接最后的数字部分。例如直播间链接为 `https://live.douyin.com/1234567890`，则输入 `/dydanmaku connect 1234567890`。
 
-3. 想关闭时输入以下命令断开连接：
+#### 第三步：断开直播间连接
+
+输入以下命令断开连接：
 
 ```java
 /dydanmaku disconnect
 ```
 
-或者点击GUI界面上的"已连接（断开）"按钮。
+也可以点击 GUI 界面上的"已连接（断开）"按钮。
 
-4. 输入以下命令可以展示当前连接直播间状态：
+#### 第四步：查看连接状态
+
+输入以下命令查看当前连接直播间的状态：
 
 ```java
 /dydanmaku status
