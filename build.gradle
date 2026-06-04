@@ -182,19 +182,51 @@ publishing {
 }
 
 // ============================================================
+// Unified output — all version JARs go to a single folder
+// ============================================================
+def allJarsDir = rootProject.layout.buildDirectory.dir('all-jars')
+
+afterEvaluate {
+    if (sc.current.parsed < "26.1") {
+        tasks.named('remapJar').configure {
+            destinationDirectory = allJarsDir
+        }
+    } else {
+        tasks.named('shadowJar').configure {
+            destinationDirectory = allJarsDir
+        }
+    }
+}
+
+// ============================================================
 // Release tasks — collect all version JARs for GitHub Releases
 // ============================================================
 
 tasks.register('collectReleaseArtifacts') {
     group = 'release'
-    description = 'Collect all version JARs and source JARs into build/release'
+    description = 'Collect all version JARs into build/release'
 
     doLast {
         def releaseDir = layout.buildDirectory.dir('release').get().asFile
         releaseDir.deleteDir()
         releaseDir.mkdirs()
 
-        // Scan all version subdirectories for built JARs
+        // Collect from the unified all-jars folder
+        def unified = allJarsDir.get().asFile
+        if (unified.exists()) {
+            unified.eachFile { jarFile ->
+                if (jarFile.name.endsWith('.jar')) {
+                    def dest = new File(releaseDir, jarFile.name)
+                    println "[release] ${jarFile.name} -> ${dest}"
+                    java.nio.file.Files.copy(
+                        jarFile.toPath(), dest.toPath(),
+                        java.nio.file.StandardCopyOption.REPLACE_EXISTING
+                    )
+                }
+            }
+        }
+
+        // Also scan all version subdirectories for any remaining JARs
         def versionsRoot = rootProject.projectDir.toPath().resolve('versions')
         if (versionsRoot.toFile().exists()) {
             versionsRoot.toFile().eachDir { versionDir ->

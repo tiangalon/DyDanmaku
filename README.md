@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/tiangalon/DyDanmaku/">
-    <img src="https://img.picui.cn/free/2025/04/26/680cd4545f571.png" alt="Logo" width="80" height="80">
+    <img src="./pic/icon.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">抖音弹幕获取</h3>
@@ -20,7 +20,7 @@
     <a href="https://github.com/tiangalon/DyDanmaku"><strong>探索本项目的文档 »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tiangalon/DyDanmaku">查看Demo</a>
+    <a href="https://www.mcmod.cn/class/17853.html">MCMOD</a>
     ·
     <a href="https://github.com/tiangalon/DyDanmaku/issues">报告Bug</a>
     ·
@@ -53,24 +53,37 @@
 
 ###### 游戏环境要求
 
-1. Minecraft 1.21.1、1.21、1.20.1、1.19.X（更多版本待日后支持，提issue可能加急）
-2. Java17以上
-3. fabric0.15.11以上
+1. Minecraft 1.20.1~26.1.2（更多版本待日后支持，提issue可能加急）
+3. fabric0.19.2及以上
 
 ###### **安装方法**
 
-1. 从release中下载对应版本的jar文件
+1. 从release中下载对应版本的jar文件（当前最新版本0.1.6）
 2. 准备好符合上述要求的游戏环境
 3. 丢进.minecraft/mods里面
 
 ###### 使用方法
+<details>
+<summary>0. 设置模组配置（可选）</summary>
+<p>模组的缓存与配置文件存放于游戏版本文件夹中config/dydanmaku目录下，其中DyDanmakuSettings.toml为本模组配置文件，启动一次游戏后自动生成</p>
+<p>由于抖音官方政策的限制，现在需要配置用户sessionid才可获取礼物等全部弹幕信息，因此需要自行从官网cookies中复制该值并加入配置文件</p>
+<p>不配置不影响mod正常使用，下面是sessionid的获取与配置方法，若无需配置可直接进入下一步</p>
+sessionid的获取与配置方法
+<p>（1）进入<a href="https://live.douyin.com/">抖音直播官网</a>>并登录自己账号</p>
+<p>（2）打开浏览器开发者工具，一般快捷键为F12（下面以谷歌浏览器为例，其他浏览器自行寻找方法）</p>
+<p>（3）找到Cookie中sessionid的值并复制（具体方法参考图片）</p>
+<img src="./pic/sessionid获取方法.png" style="margin: 0 auto;">
+<p>（4）在游戏版本文件夹/config/dydanmaku/DyDanmakuSettings.toml中配置sessionid</p>
+<img src="./pic/sessionid设置方法.png" style="margin: 0 auto;">
+</details>
+
 1. 进入游戏内世界
 2. 连接直播间
 
 （1）通过gui连接
 
 按下F7（默认按键，可在游戏内更改按键绑定），打开gui，选择“连接”
-![gui界面](https://img.picui.cn/free/2025/04/26/680cd53bb3a80.png)
+![gui界面](./pic/gui界面.jpg)
 
 （2）通过命令连接
 ```Java
@@ -92,9 +105,9 @@ live_id为抖音直播间链接最后的数字部分，比如某人直播间链�
 <h3>注意：一次只能连接一个直播间，想连接新的直播间需要先断开原来的连接</h3>
 
 ### 效果图（图中连接直播间在首页随便找的）
-![连接效果图](https://img.picui.cn/free/2025/04/26/680cd3123550b.png)
-![gui效果图1](https://img.picui.cn/free/2025/04/26/680cd311e094e.png)
-![gui效果图2](https://img.picui.cn/free/2025/04/26/680cd311ecf26.png)
+![连接效果图](./pic/连接效果.png)
+![gui效果图1](./pic/gui界面1.jpg)
+![gui效果图2](./pic/gui界面2.jpg)
 
 
 ### 后续改进计划
@@ -107,6 +120,8 @@ live_id为抖音直播间链接最后的数字部分，比如某人直播间链�
 ##### 部分依赖来源
 - [protobuffers](https://github.com/protocolbuffers/protobuf)
 - [netty](https://netty.io/)
+- [toml4j](https://github.com/mwanji/toml4j)
+- [nashorn](https://github.com/openjdk/nashorn)
 - [dy_danmaku_java](https://github.com/tiangalon/dy_danmaku_java)
 
 ##### 灵感来源
