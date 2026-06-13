@@ -92,6 +92,93 @@
 
 </details>
 
+<details>
+<summary><b>高级配置：弹幕过滤、类型开关与自定义模板</b></summary>
+<br>
+
+模组支持在 `DyDanmakuSettings.toml` 中通过 TOML 配置来控制弹幕的显示行为，所有修改无需重启游戏即可实时生效。
+
+---
+
+#### 一、弹幕过滤器
+
+通过关键词对弹幕进行筛选，支持黑名单和白名单两种模式，匹配不区分大小写。
+
+```toml
+[Filter]
+mode = "blacklist"                     # "disabled"(禁用) / "blacklist"(黑名单) / "whitelist"(白名单)
+keywords = ["广告", "加群", "刷屏"]    # 关键词列表
+```
+
+- **`blacklist`**：屏蔽包含任一关键词的消息
+- **`whitelist`**：仅显示包含任一关键词的消息
+- **`disabled`**：禁用过滤（默认）
+
+---
+
+#### 二、消息类型显示开关
+
+可选择性地关闭或开启特定类型的消息显示。
+
+```toml
+[MethodVisibility]
+chat = true       # 聊天消息 (WebcastChatMessage)
+member = false    # 进入直播间消息 (WebcastMemberMessage)
+roomStats = false # 直播间统计消息 (WebcastRoomUserSeqMessage)
+like = true       # 点赞消息 (WebcastLikeMessage)
+gift = true       # 礼物消息 (WebcastGiftMessage)
+fansclub = true   # 粉丝团消息 (WebcastFansclubMessage)
+```
+
+设置为 `false` 的消息类型将不在聊天框和弹幕列表中显示。所有类型默认为 `true`。
+
+---
+
+#### 三、自定义输出模板
+
+可以为每种消息类型编写自定义的输出格式，使用 `${变量名}` 引用消息中的数据字段。
+
+**通用用户变量（Chat/Member/Like/Gift 均可使用）：**
+
+| 变量 | 说明 |
+|------|------|
+| `${nickname}` | 用户昵称 |
+| `${payGradeLevel}` | 消费等级（无消费等级时为空） |
+| `${fansClubLevel}` | 粉丝团等级（无粉丝团时为空） |
+
+**配置示例：**
+
+```toml
+[Template]
+Chat = "§b[聊天]§f ${nickname}：${content}"
+Member = "§e[入场]§f ${nickname} 进入了直播间"
+Like = "§d[点赞]§f ${nickname} 点了${count}个赞"
+Gift = "§a[礼物]§f ${nickname} 送出了${giftName}${giftCombo}"
+Fansclub = "§6[粉丝团]§f ${content}"
+RoomStats = "§9[统计]§f 当前观看：${totalStr}，累计观看：${totalPvForAnchor}"
+```
+
+**各消息类型的专属变量：**
+
+| 配置键 | 消息类型 | 专属变量 |
+|--------|---------|----------|
+| `Chat` | 聊天 | `${content}` |
+| `Member` | 入场 | `${memberCount}`, `${actionDescription}`, `${userId}` |
+| `RoomStats` | 统计 | `${totalStr}`, `${totalPvForAnchor}` |
+| `Like` | 点赞 | `${count}` |
+| `Gift` | 礼物 | `${giftName}`, `${giftCombo}`, `${comboCount}`, `${repeatCount}`, `${giftId}`, `${giftDescribe}`, `${giftDiamondCount}`, `${giftType}` |
+| `Fansclub` | 粉丝团 | `${content}` |
+
+> **说明：**
+> - `${payGradeLevel}` 和 `${fansClubLevel}` 可用于 Chat、Member、Like、Gift 四种类型
+> - `${giftCombo}` 是预计算的连击文本（如 `x5`），无连击时为空字符串
+> - 也可单独使用 `${comboCount}` 自行控制连击显示格式
+> - 未赋值的占位符会在渲染时自动清除，不会出现 `${unknown}` 残留
+> - 使用 `§` 加字母/数字表示 Minecraft 格式化代码（如 `§b` 青色、`§a` 绿色、`§d` 粉色等）
+> - 不设置模板的消息类型将使用默认格式
+
+</details>
+
 #### 第一步：进入游戏内世界
 
 启动游戏，进入任意一个单人世界。
