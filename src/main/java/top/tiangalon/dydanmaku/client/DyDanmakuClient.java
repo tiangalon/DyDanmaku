@@ -188,13 +188,19 @@ public class DyDanmakuClient implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (DyDanmakuKey.isDown()) {
-                if(client.screen == null)
+                //? if < 26.2 {
+                /*if(client.screen == null)
                     client.setScreen(
                         gui
                     );
                 else {
                     client.setScreen(null);
                 }
+                *///?} else {
+                client.setScreenAndShow(
+                    gui
+                );
+                //?}
             }
         });
     }

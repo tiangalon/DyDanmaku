@@ -143,22 +143,26 @@ public class gui extends Screen {
                                 Component.literal("已断开直播间连接")
                         )
                 );*/
-                //? if < 1.21.2 {
-                /*this.minecraft.getToasts().addToast(
+                //? if < 26.2{
+                    /*//? if < 1.21.2 {
+                    /^this.minecraft.getToasts().addToast(
+                    ^///?} else {
+                    this.minecraft.getToastManager().addToast(
+                    //?}
+                            SystemToast.multiline(
+                                    this.minecraft,
+                                    //? if < 1.20.3 {
+                                    /^SystemToast.SystemToastIds.NARRATOR_TOGGLE,
+                                    ^///?} else {
+                                    SystemToast.SystemToastId.NARRATOR_TOGGLE,
+                                    //?}
+                                    Component.literal("DyDanmaku"),
+                                    Component.literal("已断开直播间连接")
+                            )
+                    );
                 *///?} else {
-                this.minecraft.getToastManager().addToast(
+                    this.minecraft.getNarrator().saySystemNow("已断开直播间连接");
                 //?}
-                        SystemToast.multiline(
-                                this.minecraft,
-                                //? if < 1.20.3 {
-                                /*SystemToast.SystemToastIds.NARRATOR_TOGGLE,
-                                *///?} else {
-                                SystemToast.SystemToastId.NARRATOR_TOGGLE,
-                                //?}
-                                Component.literal("DyDanmaku"),
-                                Component.literal("已断开直播间连接")
-                        )
-                );
             } else {
                 // 连接逻辑
                 live_id = liveIdInput.getValue().toString();
@@ -187,22 +191,26 @@ public class gui extends Screen {
                                 Component.literal("开始连接直播间: " + live_id)
                         )
                 );*/
-                //? if < 1.21.2 {
-                /*this.minecraft.getToasts().addToast(
+                //? if < 26.2 {
+                    /*//? if < 1.21.2 {
+                    /^this.minecraft.getToasts().addToast(
+                    ^///?} else {
+                    this.minecraft.getToastManager().addToast(
+                    //?}
+                            SystemToast.multiline(
+                                    this.minecraft,
+                                    //? if < 1.20.3 {
+                                    /^SystemToast.SystemToastIds.NARRATOR_TOGGLE,
+                                     ^///?} else {
+                                    SystemToast.SystemToastId.NARRATOR_TOGGLE,
+                                    //?}
+                                    Component.literal("DyDanmaku"),
+                                    Component.literal("开始连接直播间: " + live_id)
+                            )
+                    );
                 *///?} else {
-                this.minecraft.getToastManager().addToast(
+                this.minecraft.getNarrator().saySystemNow("开始连接直播间: " + live_id);
                 //?}
-                        SystemToast.multiline(
-                                this.minecraft,
-                                //? if < 1.20.3 {
-                                /*SystemToast.SystemToastIds.NARRATOR_TOGGLE,
-                                 *///?} else {
-                                SystemToast.SystemToastId.NARRATOR_TOGGLE,
-                                //?}
-                                Component.literal("DyDanmaku"),
-                                Component.literal("开始连接直播间: " + live_id)
-                        )
-                );
             }
         }
         ).bounds(170, 70, 60, 20).build();

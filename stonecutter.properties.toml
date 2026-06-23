@@ -5,8 +5,8 @@ mod.group="top.tiangalon"
 mod.name="DyDanmaku"
 
 # Fabric Properties
-fabric_loader = "0.19.2"
-loom_version = "1.14-SNAPSHOT"
+fabric_loader = "0.19.3"
+loom_version = "1.17-SNAPSHOT"
 
 ["1.20.1"]
 mod.mc_compat = "1.20.1"
@@ -131,3 +131,8 @@ fabric_api = "0.145.4+26.1.1"
 mod.mc_compat = "26.1.2"
 mod.mc_releases = ["26.1.2"]
 fabric_api = "0.149.0+26.1.2"
+
+["26.2"]
+mod.mc_compat = "26.2"
+mod.mc_releases = ["26.2"]
+fabric_api = "0.153.0+26.2"
